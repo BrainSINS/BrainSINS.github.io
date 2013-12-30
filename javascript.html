@@ -49,29 +49,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
+          <a class="brand" href="http://www.brainsins.com/en" target="_blank">BrainSINS</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
-                <a href="./index.html">Home</a>
+                <a href="./index.html">Developers Home</a>
               </li>
               <li class="">
                 <a href="./getting-started.html">Get started</a>
               </li>
               <li class="">
-                <a href="./scaffolding.html">Scaffolding</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">Base CSS</a>
-              </li>
-              <li class="">
-                <a href="./components.html">Components</a>
+                <a href="./plugins.html">Plugins</a>
               </li>
               <li class="active">
                 <a href="./javascript.html">JavaScript</a>
               </li>
               <li class="">
-                <a href="./customize.html">Customize</a>
+                <a href="http://support.brainsins.com" target="_blank">Support</a>
               </li>
             </ul>
           </div>
@@ -84,15 +78,15 @@
 <header class="jumbotron subhead">
   <div class="container">
     <h1>JavaScript</h1>
-    <p class="lead">Bring Bootstrap's components to life&mdash;now with 13 custom jQuery plugins.
-    <div id="carbonads-container"><div class="carbonad"><div id="azcarbon"></div><script type="text/javascript">var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZDARK"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script></div></div>
+    <p class="lead">BrainSINS JavaScript integration; suitable for any eCommerce website
+    
   </div>
 </header>
 
   <div class="container">
 
-    <div class="alert alert-danger bs-alert-old-docs">
-      <strong>Heads up!</strong> These docs are for v2.3.2, which is no longer officially supported. <a href="http://getbootstrap.com">Check out the latest version of Bootstrap!</a>
+    <div class="alert alert-info bs-alert-old-docs">
+      <strong>Heads up!</strong> If your online store is based on Prestashop, you may it easier to use our Prestashop module: <a href="./plugins.html">Check our Plugins section.</a>
     </div>
 
     <!-- Docs nav
@@ -101,19 +95,16 @@
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
-          <li><a href="#transitions"><i class="icon-chevron-right"></i> Transitions</a></li>
-          <li><a href="#modals"><i class="icon-chevron-right"></i> Modal</a></li>
-          <li><a href="#dropdowns"><i class="icon-chevron-right"></i> Dropdown</a></li>
-          <li><a href="#scrollspy"><i class="icon-chevron-right"></i> Scrollspy</a></li>
-          <li><a href="#tabs"><i class="icon-chevron-right"></i> Tab</a></li>
-          <li><a href="#tooltips"><i class="icon-chevron-right"></i> Tooltip</a></li>
-          <li><a href="#popovers"><i class="icon-chevron-right"></i> Popover</a></li>
-          <li><a href="#alerts"><i class="icon-chevron-right"></i> Alert</a></li>
-          <li><a href="#buttons"><i class="icon-chevron-right"></i> Button</a></li>
-          <li><a href="#collapse"><i class="icon-chevron-right"></i> Collapse</a></li>
-          <li><a href="#carousel"><i class="icon-chevron-right"></i> Carousel</a></li>
-          <li><a href="#typeahead"><i class="icon-chevron-right"></i> Typeahead</a></li>
-          <li><a href="#affix"><i class="icon-chevron-right"></i> Affix</a></li>
+          <li><a href="#api"><i class="icon-chevron-right"></i> Adding our JavaScript API</a></li>
+          <li><a href="#json"><i class="icon-chevron-right"></i> JSON Tagging</a></li>
+          <li><a href="#product"><i class="icon-chevron-right"></i> Product Page</a></li>
+          <li><a href="#homepage"><i class="icon-chevron-right"></i> Home Page</a></li>
+          <li><a href="#cart"><i class="icon-chevron-right"></i> Cart Page</a></li>
+          <li><a href="#category"><i class="icon-chevron-right"></i> Category Page</a></li>
+          <li><a href="#checkoutbegin"><i class="icon-chevron-right"></i> Checkout Begin</a></li>
+          <li><a href="#checkoutsuccess"><i class="icon-chevron-right"></i> Checkout Success</a></li>
+          <li><a href="#userlogin"><i class="icon-chevron-right"></i> User Log-In</a></li>
+          <li><a href="#userlogout"><i class="icon-chevron-right"></i> User Log-Out</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -122,71 +113,111 @@
         ================================================== -->
         <section id="overview">
           <div class="page-header">
-            <h1>JavaScript in Bootstrap</h1>
+            <h1>BrainSINS JavaScript Integration</h1>
           </div>
 
-          <h3>Individual or compiled</h3>
-          <p>Plugins can be included individually (though some have required dependencies), or all at once. Both <strong>bootstrap.js</strong> and <strong>bootstrap.min.js</strong> contain all plugins in a single file.</p>
+          <h3>First upload the products feed</h3>
+          <p>As stated in our "Get started" section, BrainSINS needs to get access to your products feed. Our plugins usually produce a products feed in XML format, but if your online store doesn't make use of a standard CMS you need to upload BrainSINS a products feed. For more information, you can check our the <a href="">documentation page related to the products feed</a> supported by BrainSINS.</p>
 
-          <h3>Data attributes</h3>
-          <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first class API and should be your first consideration when using a plugin.</p>
+          <h3>An overview</h3>
+          <p>After uploading the products feed, you can continue with our JavaScript integration. As you will see in this guide, our JavaScript integration requires you to include a JavaScript file from our CDN and a set of JavaScript tags based on a custom JSON format, that will inform BrainSINS about your customer's behavior in your online store.</p>
 
-          <p>That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the body namespaced with `'data-api'`. This looks like this:
-          <pre class="prettyprint linenums">$('body').off('.data-api')</pre>
+          <p>Once we receive your customer's behavior, we are able to analyze that data and interact with your users by means of product recommendations, email retargeting or behavioral targeting; providing a personalized shopping experience to fulfill your customer's desires and your needs as a business owner.</p>
+          
 
-          <p>Alternatively, to target a specific plugin, just include the plugin's name as a namespace along with the data-api namespace like this:</p>
-          <pre class="prettyprint linenums">$('body').off('.alert.data-api')</pre>
-
-          <h3>Programmatic API</h3>
-          <p>We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
-          <pre class="prettyprint linenums">$(".btn.danger").button("toggle").addClass("fat")</pre>
-          <p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
-<pre class="prettyprint linenums">
-$("#myModal").modal()                       // initialized with defaults
-$("#myModal").modal({ keyboard: false })   // initialized with no keyboard
-$("#myModal").modal('show')                // initializes and invokes show immediately</p>
-</pre>
-          <p>Each plugin also exposes its raw constructor on a `Constructor` property: <code>$.fn.popover.Constructor</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('[rel=popover]').data('popover')</code>.</p>
-
-          <h3>No Conflict</h3>
-          <p>Sometimes it is necessary to use Bootstrap plugins with other UI frameworks. In these circumstances,  namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the plugin you wish to revert the value of.</p>
-
-<pre class="prettyprint linenums">
-var bootstrapButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
-$.fn.bootstrapBtn = bootstrapButton            // give $().bootstrapBtn the bootstrap functionality
-</pre>
-
-          <h3>Events</h3>
-          <p>Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is trigger on the completion of an action.</p>
-          <p>All infinitive events provide preventDefault functionality. This provides the ability to stop the execution of an action before it starts.</p>
-<pre class="prettyprint linenums">
-$('#myModal').on('show', function (e) {
-    if (!data) return e.preventDefault() // stops modal from being shown
-})
-</pre>
-        </section>
-
-
-
-        <!-- Transitions
+        <!-- JavaScript API
         ================================================== -->
-        <section id="transitions">
+        <section id="api">
           <div class="page-header">
-            <h1>Transitions <small>bootstrap-transition.js</small></h1>
+            <h1>Include our JavaScript API <small>brainsins_v2.js</small></h1>
           </div>
-          <h3>About transitions</h3>
-          <p>For simple transition effects, include <strong>bootstrap-transition.js</strong> once alongside the other JS files. If you're using the compiled (or minified) <strong>bootstrap.js</strong>, there is no need to include this&mdash;it's already there.</p>
-          <h3>Use cases</h3>
-          <p>A few examples of the transition plugin:</p>
-          <ul>
-            <li>Sliding or fading in modals</li>
-            <li>Fading out tabs</li>
-            <li>Fading out alerts</li>
-            <li>Sliding carousel panes</li>
-          </ul>
+		  <p>The first step is to include our JavaScript file into everypage of your online store, in the HEAD section:</p>
+		
+		<pre class="prettyprint linenums">
+&lt;!-- BrainSINS Code Starts --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+   var bs = document.createElement(&quot;script&quot;);
+   bs.type = &quot;text/javascript&quot;;
+   bs.async = true;
+   bs.src = (document.location.protocol == &quot;https:&quot; ?
+   &quot;https://d2xkqxdy6ewr93.cloudfront.net&quot; : &quot;http://clients.cdn.brainsins.com&quot;) + &quot;/brainsins_v2.js&quot;;
+   var head = document.getElementsByTagName(&quot;head&quot;)[0];
+   head.appendChild(bs);
+   brainsins_token = TOKEN;
+&lt;/script&gt;
+&lt;!-- BrainSINS Code Ends --&gt;</pre>
+          
+		<p>The variable <strong>TOKEN should be replaced by your unique BrainSINS client ID</strong>. You can find that ID <a href="https://analytics.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info. This id has the following structure: BS-0000000000-1.</p>
 
-        </section>
+		<p>For instance, if your client code is “BS-1234567890-1″, the could you should generate into the HEAD section would be:</p>
 
+     	<pre class="prettyprint linenums">
+&lt;!-- BrainSINS Code Starts --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+   var bs = document.createElement(&quot;script&quot;);
+   bs.type = &quot;text/javascript&quot;;
+   bs.async = true;
+   bs.src = (document.location.protocol == &quot;https:&quot; ?
+   &quot;https://d2xkqxdy6ewr93.cloudfront.net&quot; : &quot;http://clients.cdn.brainsins.com&quot;) + &quot;/brainsins_v2.js&quot; ;
+   var head = document.getElementsByTagName(&quot;head&quot;)[0];
+   head.appendChild(bs);
+   brainsins_token = &quot;BS-1234567890-1&quot;;
+&lt;/script&gt;
+&lt;!-- BrainSINS Code Ends --&gt;</pre>
+
+
+<!-- JSON
+================================================== -->
+<section id="json">
+  <div class="page-header">
+    <h1>JSON Tagging</h1>
+  </div>
+
+  <p>In order to send BrainSINS the user's activity, we have developed a JSON format that allows you to send any type of user behavior. Next you will find the full JSON specification, but don't worry if you see too much information, because we only require you to send some information for each type of page in your online store (homepage, product page...).</p>
+  
+  <p>If you prefer to understand what information pieces need to be implemented in each page type, you can access to our specific guide that shows JSON example for each possible page type in your online store.</p>
+
+<h2>BrainSINS JSON Specification</h2>
+
+ <p>The following code represents our JSON specification. After the code you'll find a brief explanation for each data field.</p>
+     	<pre class="prettyprint linenums">		
+&lt;script type=&quot;text/javascript&quot;&gt;
+var BrainSINSData = {
+   pageType: PAGE_TYPE,
+   productId: ID_PRODUCT,
+   totalAmount: TOTAL,
+   categories: CATEGORIES,
+   userEmail: EMAIL,
+   language: LANGUAGE,
+   userNewsletter: WANTS_NEWSLETTER,
+   cart: [
+      {
+         id: ID,
+         quantity: QUANTITY
+      },
+      {
+         id: ID,
+         quantity: QUANTITY
+      },
+      ...
+   ],
+   recommenders: [
+      {
+         recommenderId: ID,
+         location: LOCATION,
+         position: POSITION,
+         filter: FILTER
+      },
+	 {
+         recommenderId: ID,
+         location: LOCATION,
+         position: POSITION,
+         filter: FILTER
+      },
+      ...	   
+   ]
+};
+&lt;/script&gt;</pre>
 
 
         <!-- Modal
