@@ -97,6 +97,7 @@
           <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
           <li><a href="#api"><i class="icon-chevron-right"></i> Adding our JavaScript API</a></li>
           <li><a href="#json"><i class="icon-chevron-right"></i> JSON Tagging</a></li>
+          <li><a href="#json-data"><i class="icon-chevron-right"></i> JSON Data Fields</a></li>
           <li><a href="#product"><i class="icon-chevron-right"></i> Product Page</a></li>
           <li><a href="#homepage"><i class="icon-chevron-right"></i> Home Page</a></li>
           <li><a href="#cart"><i class="icon-chevron-right"></i> Cart Page</a></li>
@@ -219,6 +220,53 @@ var BrainSINSData = {
 };
 &lt;/script&gt;</pre>
 
+<!-- JSON Data Fields
+================================================== -->
+<section id="json-data">
+  <div class="page-header">
+    <h1>JSON Data Fields</h1>
+  </div>
+
+ <p>In our JSON data model, we have several data attributes that records the user activity. Next, we will describe each data field, and in what circumstances, page types or desired user behaviors you need to fulfill them.</p>
+
+	<table class="table table-bordered table-striped">
+     <thead>
+      <tr>
+        <th style="width: 100px;">Data field</th>
+        <th style="width: 50px;">Page type</th>
+        <th>Description</th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+        <td>pagetype</td>
+        <td>all</td>
+        <td>This data field is used to communicate BrainSINS what type of page the user is browsing. You need to replace PAGE_TYPE by one of the following values:<br /><br />
+	<ul>
+		<li><strong>product</strong>: When the user is browsing a product page.</li>
+		<li><strong>home</strong>: When the user is browsing the homepage.</li>
+		<li><strong>category</strong>: When the user is browsing a category listing.</li>
+		<li><strong>cart</strong>: When the user is at the cart page.</li>
+		<li><strong>checkout</strong>: When the user is at the first page of the checkout process. Sometimes this page is the cart page, so in that situation you must use the "checkout" page type.</li>
+		<li><strong>thankYou</strong>: When the user has completed the purchase.</li>
+		<li><strong>login</strong>: When the user has been redirected to a specific page after the log-in process.</li>
+		<li><strong>logout</strong>: When the user has been redirected to a specific page after the log-out process.</li>
+	</ul>
+	As an example, if the user is browing the homepage, this JSON line would contain:
+	<br /><br />
+	<pre class="prettyprint linenums">pagetype: "home",</pre>
+	</td>
+      </tr>
+	<tr>
+        <td>productId</td>
+        <td>product</td>
+        <td>When the user is browsing a product page, the productId field contains the internal id of the product. This id must match the if that you use for that product in the products feed. As an example, if the user is browsing the page for the product with id 676, the JSON code should include:
+		<br /><br />
+		<pre class="prettyprint linenums">pagetype: "product",
+productId: 676,</pre>
+	</td>
+    </tr>
+	</table>
 
         <!-- Modal
         ================================================== -->
