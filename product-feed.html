@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BrainSINS Products Feed Specification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-25583205-3']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="http://www.brainsins.com/en" target="_blank">BrainSINS</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Developers Home</a>
+              </li>
+              <li class="">
+                <a href="./getting-started.html">Get started</a>
+              </li>
+              <li class="">
+                <a href="./plugins.html">Plugins</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JavaScript</a>
+              </li>
+              <li class="">
+                <a href="http://support.brainsins.com" target="_blank">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>BrainSINS Products Feed Specification</h1>
+    <p class="lead">How to Synchronize your Products Catalogue with BrainSINS</p>
+    
+  </div>
+</header>
+
+
+  <div class="container">
+
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#feed"><i class="icon-chevron-right"></i> Why Need a Products Feed?</a></li>
+          <li><a href="#shopping-csv"><i class="icon-chevron-right"></i> Google Shopping CSV</a></li>
+          <li><a href="#shopping-xml"><i class="icon-chevron-right"></i> Google Shopping XML</a></li>
+		  <li><a href="#brainsins-xml"><i class="icon-chevron-right"></i> BrainSINS Format</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+
+        <!-- Account
+        ================================================== -->
+        <section id="feed">
+          <div class="page-header">
+            <h1>Why BrainSINS Needs a Products Feed</h1>
+          </div>
+          <p>In order to update in a regular basis the details of the products in your online store, we need to get access to an updated products feed. Usually, we update this products feed once per day, but you can configure the frequency you want us to update your products feed.</p>
+
+		<p>We accept 3 different products feed formats: BrainSINS XML Format, Google Shopping XML Format, Google Shopping CSV Format. In the next section, we describe what you need to do according to your preferred product feed format.</p>
+        
+        </section>
+
+
+
+        <!-- Shopping CSV
+        ================================================== -->
+        <section id="shopping-csv">
+          <div class="page-header">
+            <h1>Google Shopping CSV</h1>
+          </div>
+          <p>If you submit your products to Google Shopping, you have to generate a Google Shopping products feed, either in CSV or XML format. If you are actually generating a Google Shopping CSV feed, we would process that file in order to get all the information about your products (Important notice: The products id in the feed should only include numbers, not any other char).</p>
+
+<h2>How Do I Load my Google Shopping Feed</h2>
+          <p>First, you need to generate a valid URL for our products feed loader. The URL will be composed by the following string http://catalog.brainsins.com/convert.php?format=google_shopping_csv&url=, plus your products feed URL. As an example, if your products feed URL is http://example.com/feed.csv, the URL you will have to introduce at our products feed loader will be:</p>
+		<pre class="prettyprint linenums">
+http://catalog.brainsins.com/convert.php?format=google_shopping_csv&url=http://example.com/feed.csv</pre>
+
+		<p>Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+
+		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+
+<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+        </section>
+
+        <!-- Shopping XML
+        ================================================== -->
+        <section id="shopping-xml">
+          <div class="page-header">
+            <h1>Google Shopping XML</h1>
+          </div>
+          <p>If you submit your products to Google Shopping, you have to generate a Google Shopping products feed, either in XML or CSV format. If you are actually generating a Google Shopping XML feed, we would process that file in order to get all the information about your products (Important notice: The products id in the feed should only include numbers, not any other char).</p>
+
+<h2>How Do I Load my Google Shopping Feed</h2>
+          <p>First, you need to generate a valid URL for our products feed loader. The URL will be composed by the following string http://catalog.brainsins.com/convert.php?format=google_shopping_xml&url=, plus your products feed URL. As an example, if your products feed URL is http://example.com/feed.xml, the URL you will have to introduce at our products feed loader will be:</p>
+		<pre class="prettyprint linenums">
+http://catalog.brainsins.com/convert.php?format=google_shopping_xml&url=http://example.com/feed.xml</pre>
+
+		<p>Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+
+		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+
+<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+        </section>
+
+
+		<!-- BrainSINS
+        ================================================== -->
+        <section id="brainsins-xml">
+          <div class="page-header">
+            <h1>BrainSINS Format</h1>
+          </div>
+          <p>If you prefer to create an XML with our own format, you’ll have to generate an XML file containing the information regarding the different products in your online store, including name, price, description, URL… You can use the next example as a template to generate your own XML file  (Important notice: The products id in the feed should only include numbers, not any other char):</p>
+
+		<pre class="prettyprint linenums">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+   &lt;recsins version=&quot;0.1&quot;&gt;
+      &lt;entities&gt;
+         &lt;entity name=&quot;product&quot;&gt;
+		 &lt;property name=&quot;idProduct&quot;&gt; ID del producto &lt;/property&gt;
+		 &lt;multi_property name=&quot;name&quot;&gt;
+		    &lt;property lang=&quot;en&quot;&gt; name in that language &lt;/property&gt;
+		    &lt;property lang=&quot;de&quot;&gt; name in that language &lt;/property&gt;
+		    &lt;property lang=&quot;es&quot;&gt; name in that language &lt;/property&gt;
+		    ...
+		 &lt;/multi_property&gt;
+		 &lt;multi_property name=&quot;description&quot;&gt;
+		    &lt;property lang=&quot;en&quot;&gt; description in that language &lt;/property&gt;
+		    &lt;property lang=&quot;de&quot;&gt; description in that language &lt;/property&gt;
+		    &lt;property lang=&quot;es&quot;&gt; description in that language &lt;/property&gt;
+		    ...
+		 &lt;/multi_property&gt;
+		 &lt;multi_property name=&quot;url&quot;&gt;
+		    &lt;property lang=&quot;en&quot;&gt; url in that language &lt;/property&gt;
+		    &lt;property lang=&quot;de&quot;&gt; url in that language &lt;/property&gt;
+		    &lt;property lang=&quot;es&quot;&gt; url in that language &lt;/property&gt;
+		    ...
+		 &lt;/multi_property&gt;
+		 &lt;property name=&quot;price&quot;&gt; price &lt;/property&gt;
+		 &lt;property name=&quot;imageUrl&quot;&gt; image URL &lt;/property&gt;
+		 &lt;property name=&quot;tags&quot;&gt; Tags &lt;/property&gt;
+		 &lt;property name=&quot;categories&quot;&gt; Categories  &lt;/property&gt;
+		 ...
+      &lt;/entity&gt;
+	  ...
+   &lt;/entities&gt;
+&lt;/recsins&gt;</pre>
+
+		<p>Once you have generated the XML file, make it accessible via any public URL (for example: http://example.com/feed.xml). Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+
+		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+
+<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+        </section>
+
+      
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <!-- Footer
+	================================================== -->
+	<footer class="footer">
+	  <div class="container">
+	    <p>Design based on <a href="http://twitter.com/twbootstrap" target="_blank">@twbootstrap</a> by <a href="http://twitter.com/brainsins_en" target="_blank">@brainsins_en</a>.</p>
+	    <ul class="footer-links">
+	      <li><a href="http://www.brainsins.com/en" target="_blank">BrainSINS Home</a></li>
+	      <li class="muted">&middot;</li>
+	      <li><a href="http://brainsins.zendesk.com" target="_blank">Support</a></li>
+	      <li class="muted">&middot;</li>
+	      <li><a href="http://www.brainsins.com/en/blog" target="_blank">BrainSINS eCommerce Blog</a></li>
+	    </ul>
+	  </div>
+	</footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+
+   
+
+  </body>
+</html>
