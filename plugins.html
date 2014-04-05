@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>BrainSINS Plugins for the most popular eCommerce CMS </title>
+    <title>BrainSINS Plugins for the most popular eCommerce CMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -75,7 +75,7 @@
 
 <!-- Subhead
 ================================================== -->
-<header class="jumbotron subhead" id="overview">
+<header class="jumbotron subhead">
   <div class="container">
     <h1>BrainSINS Plugins and 3rd Party Integrations</h1>
     <p class="lead">Integrate BrainSINS in 5 Minutes</p>
@@ -83,33 +83,219 @@
   </div>
 </header>
 
-
   <div class="container">
 
-	<div class="alert alert-error bs-alert-old-docs">
-      <strong>We are sorry!</strong> We are still creating the contents for this section. Please, check back in a few days.</a>
-    </div>
+  
 
-    
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
+          <li><a href="#prestashop"><i class="icon-chevron-right"></i> Prestashop (General)</a></li>
+          <li><a href="#prestashop15"><i class="icon-chevron-right"></i> Prestashop 1.5</a></li>
+          <li><a href="#prestashop16"><i class="icon-chevron-right"></i> Prestashop 1.6</a></li>
+          <li><a href="#magento"><i class="icon-chevron-right"></i> Magento</a></li>
+        </ul>
+      </div>
+      <div class="span9">
 
+        <!-- Overview 
+        ================================================== -->
+        <section id="overview">
+          <div class="page-header">
+            <h1>BrainSINS Plugins and 3rd Party Integrations</h1>
+          </div>
+
+          <h3>First create your BrainSINS account</h3>
+          <p>Before you start, you need to create a BrainSINS account, as in the installation process of our plugins, you'll be required a client token, that you can get after registering at BrainSINS. If you haven't a BrainSINS account, please check the <a href="./getting-started.html">Get Started section</a>.</p>
+
+          <h3>An overview</h3>
+          <p>Integrating BrainSINS with your online store using our plugins is really simple. Actually we offer plugins for Prestashop and Magento, which can be installed in less than 5 minutes.We also offer integration guides for some other eCommerce platforms such as Shopify or SEOshop. Following the integration guides for those platforms, you can integrate BrainSINS with your online store in less than 30 minutes.</p>
+
+          <p>If you are not using any of those platforms (Magento, Prestashop, Shopify, SEOshop), you can integrate BrainSINS by means of our <a href="./javascript.html">JavaScript integration</a>, which will require a little more time, but it will not require more than a few hours of your time.</p>
+           </section>
+
+        
+
+<!-- JSON
+================================================== -->
+<section id="prestashop">
+  <div class="page-header">
+    <h1>Installing our Prestashop Module</h1>
   </div>
 
+  <p>Installing our module for Prestashop is quite simple. You need to <a href="./plugins/brainsins-prestashop.zip">download our module</a> and install it as any other Prestashop module. After the installation, you'll be required to introduce your client token and configure the recommendation strategies for your online store.</p>
+  
+  <p>We have prepared a step-by-step installation and configuration guide for our Prestashop module. Choose your Prestashop version to access the specific guides:
+
+  <ul><li><a href="./plugins.html#prestashop15">Prestashop 1.5+</a></li><li><a href="./plugins.html#prestashop16">Prestashop 1.6+</a></li></ul></p>
+
+<h2 id="prestashop15">Prestashop 1.5+</h2>
+
+ <h3>Step One</h3>
+ <p>Go to the admin panel of your online store, and click in Modules -> Modules, so you can access to the page where you can manage your modules.</p>
+ <br />
+
+ <img src="./plugins/presta15/step1.jpg">
+ <br /><br />
+ <h3>Step Two</h3>
+ <p>Once in the modules page, you need to click the "Add a new module" button, located at the top-right of the screen.</p>
+ <br /> 
+ <img src="./plugins/presta15/step2.jpg">
+ <br /><br />
+ <h3>Step Three</h3>
+ <p>Now you have to choose what plugin to install. Select the ZIP file you have previously downloaded containing our module and click "Upload this module". If you haven't donwloaded our module yet, first <a href="./plugins/brainsins-prestashop.zip">download it from this link</a>.</p>
+ <br /> 
+  <img src="./plugins/presta15/step3.jpg">
+<br /><br />
+ <h3>Step Four</h3>
+ <p>At this point, the module have been uploaded to your online store, but it has not been installed. Find the BrainSINS module in your module's list and click "Install".</p>
+ <br /> 
+
+<img src="./plugins/presta15/step4.jpg">
+
+ <br /><br />
+ <h3>Step Five</h3>
+ <p>The module in now installed, and Prestashop should redirect you to the following screen, showing the message "Module(s) installed successfully". At this screen you will also find the main configuration of our module. To make our module work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://analytics.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info. This id has the following structure: BS-0000000000-1.</p>
+ <p>You should also enable the plugin, by clicking the radio button option that enables the plugin. And you also need to check your policy regarding to what users BrainSINS can send email communications on your behalf (such as cart abandonment emails, etc.). In most cases, the best option should be to choose "Users subscribed to newsletter", but it may depend on the configuration of your online store.</p>
+ <p>Don't forget to click the "Update settings" button after you have updated the basic configuration.</p>
+ <br /> 
+
+<img src="./plugins/presta15/step5.jpg">
+
+<br /><br />
+ <h3>Step Six</h3>
+ <p>After the configuration have been successfully saved, you need to click the "Recommenders" option of our configuration panel, in order to choose what recommendation strategies you want to integrate with your store and at what locations in each page.</p>
+ <br /> 
+
+ <img src="./plugins/presta15/step6.jpg">
+
+ <br /><br />
+ <h3>Step Seven</h3>
+ <p>In the Recommenders page, you will see that you can add recommenders to each page type. In this way, you can configure several recommendation strategies at each page type. In order to add a recommender to your online store, choose at what page type you want the recommender to be shown (product page, home page, etc.) and click in the "Add new recommender" button.</p>
+ <br /> 
+
+ <img src="./plugins/presta15/step7.jpg">
+
+  <br /><br />
+ <h3>Step Eight</h3>
+ <p>To add a new recommender, you will have to choose among several recommendation strategies available for that page. You will also have to choose at what position on the page you want the recommender to be shown. You can choose from a set of predefined locations (hooks), or introduce the id of the DIV you want the recommendations to be shown.</p>
+
+ <p>Remember to click the "Update settings" button after making any changes in the Recommenders configuration.</p>
+ <br /> 
+
+ <img src="./plugins/presta15/step8.jpg">
+
+   <br /><br />
+ <h3>Step Nine</h3>
+ <p>After adjusting your recommendation strategies, you can check your online store to see how the recommenders are shown. If you want to adjust the look and feel of the recommended products, you can access our  our module. To make our module work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://analytics.brainsins.com/" target="_blank">management tool</a> where you have a editor that allows you to change the look & feel of the recommendations in real time.</p>
+ <br /> 
+
+ <img src="./plugins/presta15/step9.jpg">
+
+ <br /><br />
+
+<h2 id="prestashop16">Prestashop 1.6+</h2>
+
+ <h3>Step One</h3>
+ <p>Go to the admin panel of your online store, and click in Modules -> Modules, so you can access to the page where you can manage your modules.</p>
+ <br />
+
+ <img src="./plugins/presta16/step1.jpg">
+ <br /><br />
+ <h3>Step Two</h3>
+ <p>Once in the modules page, you need to click the "Add a new module" button, located at the top-right of the screen.</p>
+ <br /> 
+ <img src="./plugins/presta16/step2.jpg">
+ <br /><br />
+ <h3>Step Three</h3>
+ <p>Now you have to choose what plugin to install. Select the ZIP file you have previously downloaded containing our module and click "Upload this module". If you haven't donwloaded our module yet, first <a href="./plugins/brainsins-prestashop.zip">download it from this link</a>.</p>
+ <br /> 
+  <img src="./plugins/presta16/step3.jpg">
+<br /><br />
+ <h3>Step Four</h3>
+ <p>At this point, the module have been uploaded to your online store, but it has not been installed. Find the BrainSINS module in your module's list and click "Install".</p>
+ <br /> 
+
+<img src="./plugins/presta16/step4.jpg">
+
+ <br /><br />
+ <h3>Step Five</h3>
+ <p>The module in now installed, and Prestashop should redirect you to the following screen, showing the message "Module(s) installed successfully". At this screen you will also find the main configuration of our module. To make our module work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://analytics.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info. This id has the following structure: BS-0000000000-1.</p>
+ <p>You should also enable the plugin, by clicking the radio button option that enables the plugin. And you also need to check your policy regarding to what users BrainSINS can send email communications on your behalf (such as cart abandonment emails, etc.). In most cases, the best option should be to choose "Users subscribed to newsletter", but it may depend on the configuration of your online store.</p>
+ <p>Don't forget to click the "Update settings" button after you have updated the basic configuration.</p>
+ <br /> 
+
+<img src="./plugins/presta16/step5.jpg">
+
+<br /><br />
+ <h3>Step Six</h3>
+ <p>After the configuration have been successfully saved, you need to click the "Recommenders" option of our configuration panel, in order to choose what recommendation strategies you want to integrate with your store and at what locations in each page.</p>
+ <br /> 
+
+ <img src="./plugins/presta16/step6.jpg">
+
+ <br /><br />
+ <h3>Step Seven</h3>
+ <p>In the Recommenders page, you will see that you can add recommenders to each page type. In this way, you can configure several recommendation strategies at each page type. In order to add a recommender to your online store, choose at what page type you want the recommender to be shown (product page, home page, etc.) and click in the "Add new recommender" button.</p>
+ <br /> 
+
+ <img src="./plugins/presta16/step7.jpg">
+
+  <br /><br />
+ <h3>Step Eight</h3>
+ <p>To add a new recommender, you will have to choose among several recommendation strategies available for that page. You will also have to choose at what position on the page you want the recommender to be shown. You can choose from a set of predefined locations (hooks), or introduce the id of the DIV you want the recommendations to be shown.</p>
+
+ <p>Remember to click the "Update settings" button after making any changes in the Recommenders configuration.</p>
+ <br /> 
+
+ <img src="./plugins/presta16/step8.jpg">
+
+   <br /><br />
+ <h3>Step Nine</h3>
+ <p>After adjusting your recommendation strategies, you can check your online store to see how the recommenders are shown. If you want to adjust the look and feel of the recommended products, you can access our  our module. To make our module work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://analytics.brainsins.com/" target="_blank">management tool</a> where you have a editor that allows you to change the look & feel of the recommendations in real time.</p>
+ <br /> 
+
+ <img src="./plugins/presta16/step9.jpg">
+
+ <br /><br />
 
 
-    <!-- Footer
-	================================================== -->
-	<footer class="footer">
-	  <div class="container">
-	    <p>Design based on <a href="http://twitter.com/twbootstrap" target="_blank">@twbootstrap</a> by <a href="http://twitter.com/brainsins_en" target="_blank">@brainsins_en</a>.</p>
-	    <ul class="footer-links">
-	      <li><a href="http://www.brainsins.com/en" target="_blank">BrainSINS Home</a></li>
-	      <li class="muted">&middot;</li>
-	      <li><a href="http://brainsins.zendesk.com" target="_blank">Support</a></li>
-	      <li class="muted">&middot;</li>
-	      <li><a href="http://www.brainsins.com/en/blog" target="_blank">BrainSINS eCommerce Blog</a></li>
-	    </ul>
-	  </div>
-	</footer>
+ </section>
+<!-- JSON Data Fields
+================================================== -->
+<section id="magento">
+  <div class="page-header">
+    <h1>Magento</h1>
+  </div>
+
+ <p>Actually, we are finishing a new version of our Magento extension. Please, come back in a few days for further information.</p>
+
+  
+
+     </section>
+
+
+   </div>
+</div>
+ </div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+  <div class="container">
+    <p>Design based on <a href="http://twitter.com/twbootstrap" target="_blank">@twbootstrap</a> by <a href="http://twitter.com/brainsins_en" target="_blank">@brainsins_en</a>.</p>
+    <ul class="footer-links">
+      <li><a href="http://www.brainsins.com/en" target="_blank">BrainSINS Home</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="http://brainsins.zendesk.com" target="_blank">Support</a></li>
+      <li class="muted">&middot;</li>
+      <li><a href="http://www.brainsins.com/en/blog" target="_blank">BrainSINS eCommerce Blog</a></li>
+    </ul>
+  </div>
+</footer>
 
 
 
@@ -137,8 +323,6 @@
 
     <script src="assets/js/application.js"></script>
 
-
-   
 
   </body>
 </html>
