@@ -109,8 +109,9 @@
             <h1>Why BrainSINS Needs a Products Feed</h1>
           </div>
           <p>In order to update in a regular basis the details of the products in your online store, we need to get access to an updated products feed. Usually, we update this products feed once per day, but you can configure the frequency you want us to update your products feed.</p>
+          <p>If you are using one of our modules (for Prestashop, Magento, etc.), you won't need to create or upload a products feed as the module will generate it for you and our system will be able to extract that products feed from your online store</p>
 
-		<p>We accept 3 different products feed formats: BrainSINS XML Format, Google Shopping XML Format, Google Shopping CSV Format. In the next section, we describe what you need to do according to your preferred product feed format.</p>
+		<p>If you are not using one of our modules, you'll need to upload a products feed. We accept 3 different products feed formats: BrainSINS XML Format, Google Shopping XML Format, Google Shopping CSV Format. In the next section, we describe what you need to do according to your preferred product feed format.</p>
         
         </section>
 
@@ -124,16 +125,14 @@
           </div>
           <p>If you submit your products to Google Shopping, you have to generate a Google Shopping products feed, either in CSV or XML format. If you are actually generating a Google Shopping CSV feed, we would process that file in order to get all the information about your products (Important notice: The products id in the feed should only include numbers, not any other char).</p>
 
-<h2>How Do I Load my Google Shopping Feed</h2>
-          <p>First, you need to generate a valid URL for our products feed loader. The URL will be composed by the following string http://catalog.brainsins.com/convert.php?format=google_shopping_csv&url=, plus your products feed URL. As an example, if your products feed URL is http://example.com/feed.csv, the URL you will have to introduce at our products feed loader will be:</p>
-		<pre class="prettyprint linenums">
-http://catalog.brainsins.com/convert.php?format=google_shopping_csv&url=http://example.com/feed.csv</pre>
+<h2>How Do I Load my Google Shopping Feed in CSV format</h2>
+          <p>It's pretty simple, just copy the URL where we can find your products feed. Go to our <a href="http://clients.brainsins.com" target="_blank">management console</a>, and click the Store Type field in the General Configuration. Then you have to choose the option Custom.</p>
 
-		<p>Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+          <br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed.jpg" alt="Configuring your own products feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
 
-		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+          <p>In the next screen you'll have to paste the URL of your products feed and choose Google Shopping CSV in the Format field</p>
 
-<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+<br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed-google-shopping-csv.jpg" alt="Setting up a Google Shopping CSV format feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
         </section>
 
         <!-- Shopping XML
@@ -144,16 +143,14 @@ http://catalog.brainsins.com/convert.php?format=google_shopping_csv&url=http://e
           </div>
           <p>If you submit your products to Google Shopping, you have to generate a Google Shopping products feed, either in XML or CSV format. If you are actually generating a Google Shopping XML feed, we would process that file in order to get all the information about your products (Important notice: The products id in the feed should only include numbers, not any other char).</p>
 
-<h2>How Do I Load my Google Shopping Feed</h2>
-          <p>First, you need to generate a valid URL for our products feed loader. The URL will be composed by the following string http://catalog.brainsins.com/convert.php?format=google_shopping_xml&url=, plus your products feed URL. As an example, if your products feed URL is http://example.com/feed.xml, the URL you will have to introduce at our products feed loader will be:</p>
-		<pre class="prettyprint linenums">
-http://catalog.brainsins.com/convert.php?format=google_shopping_xml&url=http://example.com/feed.xml</pre>
+<h2>How Do I Load my Google Shopping Feed in XML format</h2>
+          <p>It's pretty simple, just copy the URL where we can find your products feed. Go to our <a href="http://clients.brainsins.com" target="_blank">management console</a>, and click the Store Type field in the General Configuration. Then you have to choose the option Custom.</p>
 
-		<p>Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+          <br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed.jpg" alt="Configuring your own products feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
 
-		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+          <p>In the next screen you'll have to paste the URL of your products feed and choose Google Shopping XML in the Format field</p>
 
-<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+<br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed-google-shopping-xml.jpg" alt="Setting up a Google Shopping XML format feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
         </section>
 
 
@@ -199,11 +196,14 @@ http://catalog.brainsins.com/convert.php?format=google_shopping_xml&url=http://e
    &lt;/entities&gt;
 &lt;/recsins&gt;</pre>
 
-		<p>Once you have generated the XML file, make it accessible via any public URL (for example: http://example.com/feed.xml). Access to <a href="https://analytics.brainsins.com" target="_blank">your BrainSINS account</a>, and go to <strong>Optimization->Upload Catalogue</strong>. If you click on “Advanced options”, you will see 4 fields. Choose URL in the first field, introduce the URL you have generated in the previous step and choose the frequency you use to regenerate the Google Shopping products feed.</p>
+		<h2>How Do I Load my Products Feed in BrainSINS format</h2>
+          <p>It's pretty simple, just copy the URL where we can find your products feed. Go to our <a href="http://clients.brainsins.com" target="_blank">management console</a>, and click the Store Type field in the General Configuration. Then you have to choose the option Custom.</p>
 
-		<p>Click the big “Reload Catalogue” button and that’s all.</p>
+          <br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed.jpg" alt="Configuring your own products feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
 
-<br /><br /><div><img src="http://www.brainsins.com/en/wp-content/uploads/2013/08/load-products-feed.png" alt="How to place product recommendations" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
+          <p>In the next screen you'll have to paste the URL of your products feed and choose BrainSINS format in the Format field</p>
+
+<br /><br /><div><img src="http://developers.brainsins.com/images/brainsins-configure-products-feed-brainsins-format.jpg" alt="Setting up a BrainSINS XML format feed in BrainSINS" class="img-polaroid" style="width:80%; margin:auto;display:block;"></div>
         </section>
 
       
