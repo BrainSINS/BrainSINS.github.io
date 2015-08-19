@@ -225,34 +225,167 @@
 
   <h2 id="magento-detail">Installation and Configuration Guide for Magento</h2>
 
- <h3>Step One</h3>
- <p>Go to the admin panel of your online store, and install our extension just like any other Magento extension.</p>
+ <h3>Step One: Install our Extension</h3>
+ <p>Go to the admin panel of your online store, and follow the next path <strong>System > Magento Connect > Magento Connect Manager</strong>.</p>
+ <img src="./plugins/magento/step1-1.jpg">
+
+ <p>Once in that screen, you need to upload our extension as a Direct package file upload. In order to be able to upload our plugin, you need to download it first. You can get the latest BrainSINS extension for Magento in the following link: <a href="http://clients.cdn.brainsins.com/magento/Brainsins_Recommender.zip">http://clients.cdn.brainsins.com/magento/Brainsins_Recommender.zip</a>.</p>
+
+ <p>Once you have downloaded our extension to your computer, you need to click on Browse (Examinar in Spanish) and choose the path to the extension in your computer. After you have selected the zip file containing our extension, you should click on the "Upload" button.</p>
+<img src="./plugins/magento/step1-2.jpg">
+
+<p>Now you should logout and login in your Magento Admin panel. If you don't do that, it's possible that you get a 404 error when trying to access our extension.
+
  <br />
 
  <br /><br />
- <h3>Step Two</h3>
- <p>After installing the extension, you need to access the configuration of the BrainSINS extension. Go to System and then in the left menu go to BrainSINS->Configuration.</p>
+ <h3>Step Two: General Configuration</h3>
+ <p>Now it's time to configure our extension. Go to System and then in the left menu go to BrainSINS->Configuration.</p>
+
+ <p>In that screen you'll be required to introduce certain configuration values:
+    <ul>
+      <li><strong>Enable</strong>: You should choose "Yes" to activate the extension.</li>
+      <li><strong>BS-KEY</strong>: You should include your client unique token. You can find this information <a href="https://clients.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info.</li>
+      <li><strong>Customer email tracking</strong>: If you want to track the user emails in order to use them in our email retargeting service. We recommend to mark it as "Yes" so everything will be ok at any time for you to activate our email retargeting service.</li>
+    </ul>
+ </p>
  <br /> 
  <img src="./plugins/magento/step2.jpg">
  <br /><br />
- <h3>Step Three</h3>
+ <h3>Step Three: Configuration of the Advanced Options</h3>
  
- <p>The module is now installed. At this screen you will also find the main configuration of our extension. To make our extension work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://clients.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info. This id has the following structure: BS-0000000000-1.</p>
- <p>You should also enable the plugin, by selecting the option "Yes" in the first field ("Enabled"). And you also need to check your policy regarding to what users BrainSINS can send email communications on your behalf (such as cart abandonment emails, etc.). In most cases, the best option should be to choose "Subscribed to newsletter", but it may depend on the configuration of your online store.</p>
- <p>Don't forget to click the "Update settings" button after you have updated the basic configuration.</p>
- <p>In Advanced Configuration do not change any value unless our support team tells you so.</p>
- <br /> 
+ <p>In this section, you should not modify any of the preconfigured values unless you are instructed to do so. Next we explain each of those values just so you can understand what you are doing if you need to modify them:
 
+ <ul>
+  <li>Select “B” option in advanced configuration parameter “BrainSINS API Mode”. You only need to select the value "A" is BrainSINS requires you to do so. This parameter controls de BrainSINS' API endpoint you will be using.</li>
+  <li>Active the "custom tracking script" if you have instructions from BrainSINS to do it. This option allows the inclusion of a custom-made javascript file from our CDN to include additional features if needed.</li>
+  <li>If the shop use any kind of cache like Redis, Memcached, Varnish, etc, Activate "use Ajax for tracking generation".</li>
+ </ul>
+
+ </p>
+ <br /> 
 <img src="./plugins/magento/step3.jpg">
 
 <br /><br />
- <h3>Step Four</h3>
- <p>After the configuration has been successfully saved, you need to go to our <a href="https://clients.brainsins.com">management console</a>. The good news is that you can configure the position of the recommendations and the look&feel from our management console, no need to modify any other configuration in the plugin.</p>
+ <h3>Step Four: Include Recommendations in your Online Store</h3>
  
+ <p>In this section you are allowed to include recommendations blocks within the different pages of your online store.</p>
+
+<img src="./plugins/magento/step4-1.jpg">
+
+ <p>For each page you can insert recommenders clicking on the button “Add new recommender”. You will be require to add the following information per each recommendations block:</p>
+
+  <img src="./plugins/magento/step4-2.jpg">
+
+<p>
+ <ul>
+  <li><strong>Custom pos</strong>: This option allows you to choose the exact position where the recommendations will be shown in your webpage. You are required to introduce two values. The second value is a reference to a structural element of your webpage (the id or class of a certain DIV or any other HTML element). Tho choose the element of reference to position the recommendations you can make use of CSS notation: “#” for id and “.” for classes. So, with the second field you choose an HTML of reference within a certain page, and with the first field you can choose if you want to replace that HTML element with the recommendations (option "replace"), or if you want to position: "before" or "after" that block, or if you want to position the recommendations as the "first" or "last" element within the reference. You also can remove the recommender with a click on “Delete”.</li>
+  <li><strong>Recommender id</strong>: here you should indicate the number of the recommender that you want to use. Depends of your choice it will change the recommender behaviour. Following the list of behaviours you can use:
+    <ul><li>Home page<ul>
+<li>1 Related products you've watched</li>
+<li>2 Based on your browsing history</li>
+<li>3 Top sellers</li>
+<li>4 More products undiscovered</li>
+<li>5 Recomendaciones de nuevos productos</li></ul></li>
+
+<li>Product page<ul>
+<li>6 Customers who bought this product also purchased</li>
+<li>7 Recently Viewed Products</li>
+<li>8 Frequently purchased together</li>
+<li>9 Products in similar categories</li>
+<li>10 Users who have visited the product at end bought</li>
+<li>22  Based on your browsing history</li></ul></li>
+
+<li>Cart<ul>
+<li>11 Customers who bought products that appear in your shopping cart also bought/li>
+<li>12 Products that are purchased with the last added to cart</li></ul></li>
+
+<li>Checkout<ul>
+<li>13 Frequently purchased together/li>
+<li>14 Recently Viewed Products</li></ul></li>
+
+
+    </ul>
+  </li>
+ </ul>
+ </p>
+
+ <p><strong>NOTE</strong>: The button "see available recommenders" leads to list of recommenders in our <a href="https://analytics.brainsins.com">management console</a>.</p>
+ <p><strong>NOTE 2</strong>: The list of recommendations algorithms available is much larger, we have only listed the recommender algorithms preferred by most of our customers. If you desire any other recommendation algorithm, please contact our support team at <a href="mailto:support@brainsins.com">mailto:support@brainsins.com</a></p>
+
+<br /><br />
+ <h3>Step Five: Configure our Product's Feed Generator</h3>
+ <p>BrainSINS requires the use of a product's feed, so we can update the information about your products once or several times per day. To make it easier for you, our extension includes a Product's Feed Generator, that can be customized to export the data you consider more relevant for the recommendations. The parameters you can configure are:
+ <ul>
+  <li><strong>Include out of stock products</strong>: If you include out of stock products in the product's feed, those products can be shown in the recommendations.</li>
+  <li><strong>Prices with taxes included</strong>: Usually this option has to be "Yes" so the prices shown in the recommendations are the prices including taxes. If you prefer to show the prices without taxes, mark it as "No"</li>
+  <li><strong>Special price instead of normal</strong>: Choose "Yes" if you prefer to show prices that include discounts, choose "No" otherwise.</li>
+  <li><strong>Product description attribute</strong>: In most cases you don't need to change the configuration of this field. But if you are required to do so, you should select the attribute you desire to use as description in the feed.</li>
+  <li><strong>Custom image width / Custom image height</strong>: In order to show the product's images in the recommendations we usually include the images associated to your products in your Magento store. Those images tend to be really big, so in order to optimize the load of the recommendations, we recommend you to choose the width and height of the images that will be used to showcase your products in the recommendations.</li>
+ </ul>
+ </p>
+ 
+   <img src="./plugins/magento/step5.jpg">
+
  <br /><br />
 
-     </section>
+  <h3>Step Six: Configure the Autologin Option (if needed)</h3>
+ <p>This feature allows that the users that are receiving our emails for recovering ther shopping carts can log-in automatically into your online store when clicking the "Complete purchase" button of the shopping cart recovery emails.</p>
 
+<p>In order to configure this feature, you need to enable it by choosing "Yes" in the "Enabled" option and then include a Secret KEY with a value of your choice (a randomly generated set of characters and numbers should be ok). After that, you should include the same value in the "Secret key" option of our email designer within our <a href="https://analytics.brainsins.com">management console</a></p>
+ 
+   <img src="./plugins/magento/step6.jpg">
+
+ <br /><br />
+
+  <h3>Step Seven: Test & Set-Up the Product's Feed</h3>
+ <p>If our extension has been able to generate your online store's product feed, you will be able to access the feed in real time using the following URL: http://catalog.brainsins.com/magento-loader.php?url=<i>http://www.myshop.com</i>. Note that "http://www.myshop.com" is the URL of your online store. Also note that the process of generating a product's feed may take up to several minutes.</p>
+
+<p>After you have checked that our extension is able to generate the product's feed of your online store, you need to access our <a href="https://analytics.brainsins.com">management console</a> and set-up the URL of the feed, so we can load automatically your product's feed. You need to follow the next steps:
+<ul>
+  <li>1.- Access our <a href="https://analytics.brainsins.com">management console</a></li>
+  <li>2.- In the "Optimization" section you will find the sub-section “Upload catalogue”. Click on that sub-section.</li>
+  <li>3.- Click on advanced options to unlock the URL and automatic upload fields. </li>
+  <li>4.- Fill the URL field with http://catalog.brainsins.com/magento-loader.php?url=http://www.mitienda.com. Remember that "http://www.mitienda.com" should be substituted by the URL of your online store.</li>
+  <li>5.- You also can manage the frequency and the time intervals of the next automatic uploads.</li>
+  <li>6.- Finally, click on the green button “Reload Catalogue”.</li>
+</ul>
+</p>
+ 
+   <img src="./plugins/magento/step7.jpg">
+
+<p>If the upload was correct you could see the URL with the date and “ok”.</p>
+ <br /><br />
+
+<h3>Step Eight: Edit the Look&Feel of the Recommendations</h3>
+ <p>Just when you add a new recommendation block in your online store, the recommendations will show a basic look & feel, that in most cases wouldn't fit your online store's design. You can modify the look&feel of the recommendations by accessing our <a href="https://analytics.brainsins.com">management console</a> and then following the next path: Optimization > Recommenders > List.</p>
+
+ <img src="./plugins/magento/step8-1.jpg">
+
+ <p>In that screen you will see a list of the recommender available for your online store. You can modify the look&feel of any of the recommenders by choosing the "Edit style" button next to each recommender:</p>
+
+  <img src="./plugins/magento/step8-2.jpg">
+
+  <p>Once in the editor, you could see some options to change the colors, sizes, etc. An example of a default configuration: </p>
+
+ <img src="./plugins/magento/step8-3.jpg">
+
+     </section>
+<p>The basic editor allows you to modify certain basic aspects of the look&feel of the recommendations in an easy way. You can also modify the look&feel of the recommendations in any possible way if you have some knowledge of HTML and CSS. Click on the orange button “Swich to advanced editor” to start working.</p>
+
+ <img src="./plugins/magento/step8-4.jpg">
+
+ <p>Once in you will see four sections:
+<ul><li><strong>Product HTML</strong>: your HTML of each product of the recommender will be here. You also can use the variables ${name}, ${id}, ${price}, ${url}, ${image} and an onclick function to return something when click. </li>
+<li><strong>Recommender HTML</strong>: HTML of the recommenders container. Each product that you want to show will be invoked by the variable "${product}". It says to the system that it have to reproduce the code in “Product HTML”.</li>
+<li><strong>Product CSS</strong>: your CSS associate to each product.</li>
+<li><strong>Recommender CSS</strong>: CSS associate to "Recommender HTML".</li>
+</ul>
+ </p>
+
+ <p>You should also configure the currency format according to each tracking code that you are using in your shop. Contact with support team of BrainSINS in http://support.brainsins.com if you don’t know clrearly what tracking code are you using or should use in your shop.</p>
+
+<img src="./plugins/magento/step8-5.jpg">
 
    </div>
 </div>
