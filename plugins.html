@@ -173,40 +173,131 @@
 
 <h2 id="prestashop16">Prestashop 1.6+</h2>
 
- <h3>Step One</h3>
- <p>Go to the admin panel of your online store, and click in Modules -> Modules, so you can access to the page where you can manage your modules.</p>
+ <h3>Step One: Install the Module</h3>
+ <p>If you have any older version of the module, please uninstall it completely and install the newest. You can download the BrainSINS Prestashop plugin in the following URL:</p>
+
+<p><a href="http://clients.cdn.brainsins.com/prestashop/brainsins.zip">http://clients.cdn.brainsins.com/prestashop/brainsins.zip</a></p>
+
+<p>Go to “<strong>Modules and services</strong>” in the admin panel of your online store and proceed to install the module in your Prestashop clicking on the next button located on the top-right of the page: </p>
  <br />
 
- <img src="./plugins/presta16/step1.jpg">
+ <img src="./plugins/presta16/step1-1.jpg">
+
+ <p>It will appear a section where you have to click on “<strong>Choose a file</strong>” and select the ZIP file that you should download before. Then, click on “<strong>Upload this module</strong>”.</p>
+  <br />
+
+ <img src="./plugins/presta16/step1-2.jpg">
+ <p>Once the installation will be completed, scroll down to access the configuration (or install).</p>
+  <br />
+
+ <img src="./plugins/presta16/step1-3.jpg">
+
  <br /><br />
- <h3>Step Two</h3>
- <p>Once in the modules page, you need to click the "Add a new module" button, located at the top-right of the screen.</p>
+ <h3>Step Two: General Configuration</h3>
+ <p>Now it's time to configure our module. Go to your list of modules and click on “Configuration” in the BrainSINS module.</p>
+ <p>In that screen you'll be required to introduce certain configuration values:</p>
+ <ul>
+  <li><strong>Active</strong>: Mark it as checked to active the module.</li>
+  <li><strong>Debug</strong>: Mark it as un-checked unless you are required to do so.</li>
+  <li><strong>BranSINS Key</strong>: You should include your client unique token. You can find this information accessing our <a href="https://analytics.brainsins.com/">management tool</a> and then go to Settings -> Account info.</li>
+  <li><strong>Allow email sending to</strong>: If you want to track the user emails in order to use them in our email retargeting service. We recommend to mark it as "<strong>All users</strong>" so everything will be ok at any time for you to activate our email retargeting service. You can change it later anyway.</li>
+  <li><strong>BrainSINS API Mode</strong>: Select “<strong>B</strong>”. You only need to select the value "A" if BrainSINS requires you to do so. This parameter controls the BrainSINS' API endpoint you will be using.</li>
+ </ul>
+
  <br /> 
  <img src="./plugins/presta16/step2.jpg">
+ <p>Click on "Update settings" to complete the process and continue with the next step.</p>
  <br /><br />
- <h3>Step Three</h3>
- <p>Now you have to choose what plugin to install. Select the ZIP file you have previously downloaded containing our module and click "Upload this module". If you haven't donwloaded our module yet, first <a href="http://clients.cdn.brainsins.com/prestashop/brainsins.zip" target="_blank">download it from this link</a>.</p>
+ <h3>Step Three: Test & Set-Up the Product's Feed</h3>
+ <p>If our extension has been able to generate your online store's product feed, you will be able to access the feed in real time using the following URL:</p>
+<p>http://catalog.brainsins.com/prestashop-loader.php?url=http://www.myshop.com.</p>
+<p><strong>NOTE:</strong> that "http://www.myshop.com" is the URL of your online store. Also note that the process of generating a product's feed may take up to several minutes.</p>
+<p>After you have checked that our extension is able to generate the product's feed of your online store, you need to access our management console and set-up the URL of the feed, so we can load automatically your product's feed. You need to follow the next steps:
+<ul>
+  <li>1.- Access our management console</li>
+  <li>2.- In the "Optimization" section you will find the sub-section “Upload catalogue”. Click on that sub-section.</li>
+  <li>3.- Click on advanced options to unlock the URL and automatic upload fields.</li>
+  <li>4.- Fill the URL field with http://catalog.brainsins.com/prestashop-loader.php?url=http://www.myshop.com
+Remember that "http://www.myshop.com" should be substituted by the URL of your online store.</li>
+  <li>5.- You also can manage the frequency and the time intervals of the next automatic uploads. Take in advance that you can select ranges to upload and not an exact hour. </li>
+  <li>6.- Finally, click on the green button “Reload Catalogue”.</li></ul></p>
  <br /> 
   <img src="./plugins/presta16/step3.jpg">
+  <p>If the upload was correct you could see the URL with the date and “ok”.</p>
 <br /><br />
- <h3>Step Four</h3>
- <p>At this point, the module has been uploaded to your online store, but it has not been installed. Find the BrainSINS module in your module's list and click "Install".</p>
+ <h3>Step Four: Active the Recommenders</h3>
+ <p>Once the feed have been uploaded, recommenders have the products to show. It’s time to active then. Open the configuration panel in our Prestashop plugin:</p>
  <br /> 
 
-<img src="./plugins/presta16/step4.jpg">
+<img src="./plugins/presta16/step4-1.jpg">
+
+<p>You will see three tabs inside the module. Click on “Recommenders” to see every web part where we can include a recommender: Home, Product, Cart and Checkout. To add a recommender just click on the “Add new recommender” button that show the following options:
+  <ul><li>Select the recommender type to show.</li>
+<li>Select the page zone where you want to see the recommender.</li>
+<li>Instead of select a zone, put the ID of the HTML container or a jQuery selector that you want to replace with the recommender.</li>
+</ul>
+
+<p><strong>NOTE</strong>: If you can’t see the recommender for any reason, go to configuration tab of the module and paste again the token (KEY). Then click on “<strong>Update settings</strong>”.</p>
+
+<p>When you already have selected the options, click on the save icon on the right of the recommender:</p>
+<br />
+
+<img src="./plugins/presta16/step4-2.jpg">
+
+<p>An example configuration of a recommender un home page based on your last item visited that will replace the div which ID is “brainsins_div_home”:</p>
+<br />
+<img src="./plugins/presta16/step4-3.jpg">
+
 
  <br /><br />
- <h3>Step Five</h3>
- <p>The module is now installed, and Prestashop should redirect you to the next screen, showing the message "Module(s) installed successfully". At this screen you will also find the main configuration of our module. To make our module work, you need to introduce your client token in BrainSINS Key. You can find the BrainSINS Key <a href="https://analytics.brainsins.com/" target="_blank">accessing our management tool</a>: Settings->Account info. This id has the following structure: BS-0000000000-1.</p>
- <p>You should also enable the plugin, by clicking the radio button option that enables the plugin. And you also need to check your policy regarding to what users BrainSINS can send email communications on your behalf (such as cart abandonment emails, etc.). In most cases, the best option should be to choose "Users subscribed to newsletter", but it may depend on the configuration of your online store.</p>
- <p>Don't forget to click the "Update settings" button after you have updated the basic configuration.</p>
- <br /> 
+ <h3>Step Five: Edit the Look&Feel of the Recommendations</h3>
+ <p>If our extension has been able to generate your online store's product feed, you will be able to access the feed in real time using the following URL: http://catalog.brainsins.com/magento-loader.php?url=<i>http://www.myshop.com</i>. Note that "http://www.myshop.com" is the URL of your online store. Also note that the process of generating a product's feed may take up to several minutes.</p>
 
-<img src="./plugins/presta16/step5.jpg">
+<p>After you have checked that our extension is able to generate the product's feed of your online store, you need to access our <a href="https://analytics.brainsins.com">management console</a> and set-up the URL of the feed, so we can load automatically your product's feed. You need to follow the next steps:
+<ul>
+  <li>1.- Access our <a href="https://analytics.brainsins.com">management console</a></li>
+  <li>2.- In the "Optimization" section you will find the sub-section “Upload catalogue”. Click on that sub-section.</li>
+  <li>3.- Click on advanced options to unlock the URL and automatic upload fields. </li>
+  <li>4.- Fill the URL field with http://catalog.brainsins.com/magento-loader.php?url=http://www.mystore.com. Remember that "http://www.mystore.com" should be substituted by the URL of your online store.</li>
+  <li>5.- You also can manage the frequency and the time intervals of the next automatic uploads.</li>
+  <li>6.- Finally, click on the green button “Reload Catalogue”.</li>
+</ul>
+</p>
+ 
+   <img src="./plugins/magento/step7.jpg">
 
-<br /><br />
- <h3>Step Six</h3>
-<p>After the configuration has been successfully saved, you need to go to our <a href="https://analytics.brainsins.com">management console</a>. The good news is that you can configure the position of the recommendations and the look&feel from our management console, no need to modify any other configuration in the plugin.</p>
+<p>If the upload was correct you could see the URL with the date and “ok”.</p>
+ <br /><br />
+
+<h3>Step Eight: Edit the Look&Feel of the Recommendations</h3>
+ <p>Just when you add a new recommendation block in your online store, the recommendations will show a basic look & feel, that in most cases wouldn't fit your online store's design. You can modify the look&feel of the recommendations by accessing our <a href="https://analytics.brainsins.com">management console</a> and then following the next path: Optimization > Recommenders > List.</p>
+
+ <img src="./plugins/magento/step8-1.jpg">
+
+ <p>In that screen you will see a list of the recommender available for your online store. You can modify the look&feel of any of the recommenders by choosing the "Edit style" button next to each recommender:</p>
+
+  <img src="./plugins/magento/step8-2.jpg">
+
+  <p>Once in the editor, you could see some options to change the colors, sizes, etc. An example of a default configuration: </p>
+
+ <img src="./plugins/magento/step8-3.jpg">
+
+     </section>
+<p>The basic editor allows you to modify certain basic aspects of the look&feel of the recommendations in an easy way. You can also modify the look&feel of the recommendations in any possible way if you have some knowledge of HTML and CSS. Click on the orange button “Swich to advanced editor” to start working.</p>
+
+ <img src="./plugins/magento/step8-4.jpg">
+
+ <p>Once in you will see four sections:
+<ul><li><strong>Product HTML</strong>: your HTML of each product of the recommender will be here. You also can use the variables ${name}, ${id}, ${price}, ${url}, ${image} and an onclick function to return something when click. </li>
+<li><strong>Recommender HTML</strong>: HTML of the recommenders container. Each product that you want to show will be invoked by the variable "${product}". It says to the system that it have to reproduce the code in “Product HTML”.</li>
+<li><strong>Product CSS</strong>: your CSS associate to each product.</li>
+<li><strong>Recommender CSS</strong>: CSS associate to "Recommender HTML".</li>
+</ul>
+ </p>
+
+ <p>You should also configure the currency format according to each tracking code that you are using in your shop. Contact with support team of BrainSINS in http://support.brainsins.com if you don’t know clrearly what tracking code are you using or should use in your shop.</p>
+
+<img src="./plugins/magento/step8-5.jpg">
 
  <br /><br />
 
@@ -283,7 +374,7 @@
 
 <p>
  <ul>
-  <li><strong>Custom pos</strong>: This option allows you to choose the exact position where the recommendations will be shown in your webpage. You are required to introduce two values. The second value is a reference to a structural element of your webpage (the id or class of a certain DIV or any other HTML element). Tho choose the element of reference to position the recommendations you can make use of CSS notation: “#” for id and “.” for classes. So, with the second field you choose an HTML of reference within a certain page, and with the first field you can choose if you want to replace that HTML element with the recommendations (option "replace"), or if you want to position: "before" or "after" that block, or if you want to position the recommendations as the "first" or "last" element within the reference. You also can remove the recommender with a click on “Delete”.</li>
+  <li><strong>Custom pos</strong>: This option allows you to choose the exact position where the recommendations will be shown in your webpage. You are required to introduce two values. The second value is a reference to a structural element of your webpage (the id or class of a certain DIV or any other HTML element). To choose the element of reference to position the recommendations you can make use of CSS notation: “#” for id and “.” for classes. So, with the second field you choose an HTML of reference within a certain page, and with the first field you can choose if you want to replace that HTML element with the recommendations (option "replace"), or if you want to position: "before" or "after" that block, or if you want to position the recommendations as the "first" or "last" element within the reference. You also can remove the recommender with a click on “Delete”.</li>
   <li><strong>Recommender id</strong>: here you should indicate the number of the recommender that you want to use. Depends of your choice it will change the recommender behaviour. Following the list of behaviours you can use:
     <ul><li>Home page<ul>
 <li>1 Related products you've watched</li>
@@ -334,7 +425,7 @@
  <br /><br />
 
   <h3>Step Six: Configure the Autologin Option (if needed)</h3>
- <p>This feature allows that the users that are receiving our emails for recovering ther shopping carts can log-in automatically into your online store when clicking the "Complete purchase" button of the shopping cart recovery emails.</p>
+ <p>This feature allows that the users that are receiving our emails for recovering their shopping carts can log-in automatically into your online store when clicking the "Complete purchase" button of the shopping cart recovery emails.</p>
 
 <p>In order to configure this feature, you need to enable it by choosing "Yes" in the "Enabled" option and then include a Secret KEY with a value of your choice (a randomly generated set of characters and numbers should be ok). After that, you should include the same value in the "Secret key" option of our email designer within our <a href="https://analytics.brainsins.com">management console</a></p>
  
