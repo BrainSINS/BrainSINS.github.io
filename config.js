@@ -8,8 +8,8 @@ const config = {
 		"logo": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_white.svg",
 		"title": "Gatsby Gitbook Boilerplate",
 		"githubUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
-		"helpUrl": "",
-		"tweetText": "",
+		"helpUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
+		"tweetText": "dsfdsf",
 		"links": [
 			{ "text": "", "link": ""}
 		],
@@ -17,11 +17,18 @@ const config = {
 	"sidebar": {
 		"forcedNavOrder": [
 			"/introduction",
+			"/introduction/miau",
+			"/introduction/guau",
+			"/introduction/codeblock",
     		"/codeblock"
 		],
 		"links": [
 			{ "text": "", "link": ""},
 		]
+	},
+	"languages":{
+		"default":"en",
+		"available":["es"]
 	},
 	"siteMetadata": {
 		"title": "Gatsby Gitbook Boilerplate | Hasura",

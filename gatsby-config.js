@@ -15,6 +15,7 @@ module.exports = {
     tweetText: config.header.tweetText,
     headerLinks: config.header.links,
     siteUrl: config.gatsby.siteUrl,
+    languages:config.languages
   },
   plugins: [
     'gatsby-plugin-sitemap',

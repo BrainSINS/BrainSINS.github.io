@@ -7,7 +7,7 @@ import './styles.css';
 import config from '../../config';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
-
+const languages=config.languages.available;
 const Sidebar = styled('aside')`
   width: 100%;
   /* background-color: rgb(245, 247, 249); */
@@ -132,33 +132,37 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      const navItems = allMdx.edges
-        .map(({ node }) => node.fields.slug)
-        .filter(slug => slug !== "/")
-        .sort()
-        .reduce(
-          (acc, cur) => {
-            if (forcedNavOrder.find(url => url === cur)) {
-              return { ...acc, [cur]: [cur] };
-            }
+      // const navItems = allMdx.edges
+      //   .map(({ node }) => node.fields.slug)
+      //   .filter(slug =>{
+      //     return slug !== "/" && languages.indexOf(slug.split("/")[1]<0)
+      //   })
+      //   .sort()
+      //   .reduce(
+      //     (acc, cur) => {
+            
+      //       if (forcedNavOrder.find(url => url === cur)) {
+      //         return { ...acc, [cur]: [cur] };
+      //       }
+      //       console.log(cur);
+      //       const prefix = cur.split("/")[1];
 
-            const prefix = cur.split("/")[1];
-
-            if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-              return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-            } else {
-              return { ...acc, items: [...acc.items, cur] };
-            }
-          },
-          { items: [] }
-        );
-
+      //       if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
+      //         return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
+      //       } else {
+      //         return { ...acc, items: [...acc.items, cur] };
+      //       }
+      //     },
+      //     { items: [] }
+      //   );
+      //     console.log(navItems);
       const nav = forcedNavOrder
-        .reduce((acc, cur) => {
-          return acc.concat(navItems[cur]);
-        }, [])
-        .concat(navItems.items)
+        // .reduce((acc, cur) => {
+        //   return acc.concat(navItems[cur]);
+        // }, [])
+        //.concat(navItems.items)
         .map(slug => {
+          console.log(slug);
           const { node } = allMdx.edges.find(
             ({ node }) => node.fields.slug === slug
           );
@@ -167,11 +171,13 @@ const SidebarLayout = ({ location }) => (
           if(location && (location.pathname === node.fields.slug || location.pathname === (config.gatsby.pathPrefix + node.fields.slug)) ) {
             isActive = true;
           }
-
+          let uriLang=location.pathname.split("/")[1];
+          let langChosen=(languages.indexOf(uriLang) > -1 ? uriLang : (languages.indexOf(navigator.language) > -1 ? navigator.language : ""));
+          console.log(langChosen);
           return (
             <ListItem
               key={node.fields.slug}
-              to={`${node.fields.slug}`}
+              to={langChosen+`${node.fields.slug}`}
               level={node.fields.slug.split("/").length - 2}
               active={isActive}
             >
