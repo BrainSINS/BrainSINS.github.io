@@ -6,10 +6,9 @@ const config = {
 	},
 	"header": {
 		"logo": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_white.svg",
-		"title": "Gatsby Gitbook Boilerplate",
-		"githubUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
-		"helpUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
-		"tweetText": "dsfdsf",
+		"githubUrl": "https://github.com/BrainSINS/BrainSINS.github.io",
+		"helpUrl": "https://brainsins.zendesk.com",
+		"tweetText": "",
 		"links": [
 			{ "text": "", "link": ""}
 		],

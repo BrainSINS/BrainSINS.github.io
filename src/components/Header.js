@@ -3,8 +3,11 @@ import { StaticQuery, graphql } from "gatsby";
 import GitHubButton from "react-github-btn";
 import Link from "./link";
 import "./styles.css";
-
+import Translator from "./Translator"
 import Sidebar from "./sidebar";
+
+
+
 
 const Header = ({ location }) => (
   <StaticQuery
@@ -12,7 +15,6 @@ const Header = ({ location }) => (
       query headerTitleQuery {
         site {
           siteMetadata {
-            headerTitle
             githubUrl
             helpUrl
             tweetText
@@ -35,7 +37,6 @@ const Header = ({ location }) => (
       const {
         site: {
           siteMetadata: {
-            headerTitle,
             githubUrl,
             helpUrl,
             tweetText,
@@ -72,7 +73,7 @@ const Header = ({ location }) => (
                     alt={"logo"}
                   />
                 )}
-                {headerTitle}
+                <Translator text="heading"/>
               </Link>
             </div>
             <div
@@ -97,7 +98,7 @@ const Header = ({ location }) => (
                 ) : null}
                 {helpUrl !== "" ? (
                   <li>
-                    <a href={helpUrl}>Need Help?</a>
+                    <a href={helpUrl}><Translator text="needHelp"/></a>
                   </li>
                 ) : null}
               </ul>
