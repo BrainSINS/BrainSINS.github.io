@@ -5,9 +5,11 @@ import { ExternalLink } from "react-feather";
 import Link from "./link";
 import './styles.css';
 import config from '../../config';
+import {getLangs,activeLang} from "./Switcher.js";
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
-const languages=config.languages.available;
+const languages=getLangs();
+
 const Sidebar = styled('aside')`
   width: 100%;
   /* background-color: rgb(245, 247, 249); */
@@ -162,7 +164,6 @@ const SidebarLayout = ({ location }) => (
         // }, [])
         //.concat(navItems.items)
         .map(slug => {
-          console.log(slug);
           const { node } = allMdx.edges.find(
             ({ node }) => node.fields.slug === slug
           );
@@ -171,9 +172,7 @@ const SidebarLayout = ({ location }) => (
           if(location && (location.pathname === node.fields.slug || location.pathname === (config.gatsby.pathPrefix + node.fields.slug)) ) {
             isActive = true;
           }
-          let uriLang=location.pathname.split("/")[1];
-          let langChosen=(languages.indexOf(uriLang) > -1 ? uriLang : (languages.indexOf(navigator.language) > -1 ? navigator.language : ""));
-          console.log(langChosen);
+          let langChosen=activeLang()=="en" ? "":activeLang();
           return (
             <ListItem
               key={node.fields.slug}

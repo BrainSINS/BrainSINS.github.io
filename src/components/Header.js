@@ -5,8 +5,7 @@ import Link from "./link";
 import "./styles.css";
 import Translator from "./Translator"
 import Sidebar from "./sidebar";
-
-
+import Switcher from "./Switcher.js";
 
 
 const Header = ({ location }) => (
@@ -22,10 +21,6 @@ const Header = ({ location }) => (
             headerLinks {
               link
               text
-            }
-            languages {
-              default
-              available
             }
           }
         }
@@ -104,18 +99,7 @@ const Header = ({ location }) => (
               </ul>
               }
               <ul className={"nav navbar-nav navBarUL navbar-right"}>
-                <li key={languages.default}>
-                  <a href="/">{languages.default}</a>
-                </li>
-                {languages.available.map(lang => {
-                  if (lang !== "") {
-                    return (
-                      <li key={lang}>
-                        <a href={lang + "/"}>{lang}</a>
-                      </li>
-                    );
-                  }
-                })}
+                <Switcher/>
                 {tweetText !== "" ? (
                   <li>
                     <a
