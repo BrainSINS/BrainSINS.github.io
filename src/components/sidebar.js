@@ -3,14 +3,14 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "react-emotion";
 import { ExternalLink } from "react-feather";
 import Link from "./link";
-import './styles.css';
-import config from '../../config';
-import {getLangs,activeLang} from "./Switcher.js";
+import "./styles.css";
+import config from "../../config";
+import { getLangs, activeLang } from "./Switcher.js";
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
-const languages=getLangs();
+const languages = getLangs();
 
-const Sidebar = styled('aside')`
+const Sidebar = styled("aside")`
   width: 100%;
   /* background-color: rgb(245, 247, 249); */
   /* border-right: 1px solid #ede7f3; */
@@ -26,7 +26,13 @@ const Sidebar = styled('aside')`
   background-color: #372476;
   /* Safari 4-5, Chrome 1-9 */
   background: linear-gradient(#372476, #3b173b);
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#372476), to(#3b173b));
+  background: -webkit-gradient(
+    linear,
+    0% 0%,
+    0% 100%,
+    from(#372476),
+    to(#3b173b)
+  );
   /* Safari 5.1, Chrome 10+ */
   background: -webkit-linear-gradient(top, #372476, #3b173b);
   /* Firefox 3.6+ */
@@ -40,8 +46,7 @@ const Sidebar = styled('aside')`
     background-color: #372476;
     background: #372476;
   }
-  @media (min-width: 767px) and (max-width:1023px)
-  {
+  @media (min-width: 767px) and (max-width: 1023px) {
     padding-left: 0;
   }
   @media only screen and (max-width: 1023px) {
@@ -60,9 +65,9 @@ const ListItem = styled(({ className, active, level, ...props }) => {
       </li>
     );
   } else if (level === 1) {
-    const customClass = active ? 'active' : '';
+    const customClass = active ? "active" : "";
     return (
-      <li className={'subLevel ' + customClass}>
+      <li className={"subLevel " + customClass}>
         <Link {...props} />
       </li>
     );
@@ -127,6 +132,7 @@ const SidebarLayout = ({ location }) => (
               fields {
                 slug
                 title
+                lang
               }
             }
           }
@@ -134,30 +140,30 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      // const navItems = allMdx.edges
-      //   .map(({ node }) => node.fields.slug)
-      //   .filter(slug =>{
-      //     return slug !== "/" && languages.indexOf(slug.split("/")[1]<0)
-      //   })
-      //   .sort()
-      //   .reduce(
-      //     (acc, cur) => {
-            
-      //       if (forcedNavOrder.find(url => url === cur)) {
-      //         return { ...acc, [cur]: [cur] };
-      //       }
-      //       console.log(cur);
-      //       const prefix = cur.split("/")[1];
-
-      //       if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-      //         return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-      //       } else {
-      //         return { ...acc, items: [...acc.items, cur] };
-      //       }
-      //     },
-      //     { items: [] }
-      //   );
-      //     console.log(navItems);
+      const navItems = allMdx.edges
+        .map(({ node }) => {
+          return { slug: node.fields.slug, lang: node.fields.lang };
+        })
+        .filter(item => {
+          return (
+            item.slug !== "/" && languages.indexOf(item.slug.split("/")[1] < 0)
+          );
+        })
+        .sort()
+        .reduce(
+          (acc, cur) => {
+            if (forcedNavOrder.find(url => url === cur)) {
+              return { ...acc, [cur]: [cur] };
+            }
+            let prefix = (activeLang()!="en") ? cur.slug.replace("/"+activeLang()+"/","/") : cur.slug;
+            if (prefix && forcedNavOrder.find(url => url === `${prefix}`)) {
+              return { ...acc, [`${cur.slug}`]: [...acc[`${cur.slug}`], cur] };
+            } else {
+              return { ...acc, items: [...acc.items, cur] };
+            }
+          },
+          { items: [] }
+        );
       const nav = forcedNavOrder
         // .reduce((acc, cur) => {
         //   return acc.concat(navItems[cur]);
@@ -169,14 +175,19 @@ const SidebarLayout = ({ location }) => (
           );
 
           let isActive = false;
-          if(location && (location.pathname === node.fields.slug || location.pathname === (config.gatsby.pathPrefix + node.fields.slug)) ) {
+          let slugWithLang=(activeLang()!="en") ? activeLang()+node.fields.slug : node.fields.slug;
+          if (
+            location &&
+            (location.pathname === slugWithLang ||
+              location.pathname === config.gatsby.pathPrefix + slugWithLang)
+          ) {
             isActive = true;
           }
-          let langChosen=activeLang()=="en" ? "":activeLang();
+          let langChosen = activeLang() == "en" ? "" : activeLang();
           return (
             <ListItem
               key={node.fields.slug}
-              to={langChosen+`${node.fields.slug}`}
+              to={langChosen + `${node.fields.slug}`}
               level={node.fields.slug.split("/").length - 2}
               active={isActive}
             >
@@ -187,12 +198,12 @@ const SidebarLayout = ({ location }) => (
 
       return (
         <Sidebar>
-          <ul className={'sideBarUL'}>
+          <ul className={"sideBarUL"}>
             {nav}
             <Divider />
-            {config.sidebar.links.map((link,key) => {
-              if(link.link !== '' && link.text !== '') {
-                return(
+            {config.sidebar.links.map((link, key) => {
+              if (link.link !== "" && link.text !== "") {
+                return (
                   <ListItem key={key} to={link.link}>
                     {link.text}
                     <ExternalLink size={14} />

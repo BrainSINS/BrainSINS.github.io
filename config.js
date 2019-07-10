@@ -25,10 +25,6 @@ const config = {
 			{ "text": "", "link": ""},
 		]
 	},
-	"languages":{
-		"default":"en",
-		"available":["es"]
-	},
 	"siteMetadata": {
 		"title": "Gatsby Gitbook Boilerplate | Hasura",
 		"description": "Documentation built with mdx. Powering learn.hasura.io ",

@@ -91,5 +91,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       value: node.frontmatter.title || startCase(parent.name)
     });
+    createNodeField({
+      name: "lang",
+      node,
+      value: node.frontmatter.lang || "en"
+    });
   }
 };
