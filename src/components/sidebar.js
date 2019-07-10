@@ -132,7 +132,6 @@ const SidebarLayout = ({ location }) => (
               fields {
                 slug
                 title
-                lang
               }
             }
           }
@@ -155,7 +154,10 @@ const SidebarLayout = ({ location }) => (
             if (forcedNavOrder.find(url => url === cur)) {
               return { ...acc, [cur]: [cur] };
             }
-            let prefix = (activeLang()!="en") ? cur.slug.replace("/"+activeLang()+"/","/") : cur.slug;
+            let prefix =
+              activeLang() != "en"
+                ? cur.slug.replace("/" + activeLang() + "/", "/")
+                : cur.slug;
             if (prefix && forcedNavOrder.find(url => url === `${prefix}`)) {
               return { ...acc, [`${cur.slug}`]: [...acc[`${cur.slug}`], cur] };
             } else {
@@ -170,25 +172,26 @@ const SidebarLayout = ({ location }) => (
         // }, [])
         //.concat(navItems.items)
         .map(slug => {
-          const { node } = allMdx.edges.find(
-            ({ node }) => node.fields.slug === slug
-          );
-
+          
+          let slugWithLang =
+            (activeLang() != "en"
+              ? "/"+activeLang() + slug
+              : slug);
+          const { node } = allMdx.edges.find(({ node }) => {
+            return node.fields.slug === slugWithLang;
+          });
           let isActive = false;
-          let slugWithLang=(activeLang()!="en") ? activeLang()+node.fields.slug : node.fields.slug;
           if (
             location &&
-            (location.pathname === slugWithLang ||
-              location.pathname === config.gatsby.pathPrefix + slugWithLang)
+            (location.pathname === slugWithLang)
           ) {
             isActive = true;
           }
-          let langChosen = activeLang() == "en" ? "" : activeLang();
           return (
             <ListItem
               key={node.fields.slug}
-              to={langChosen + `${node.fields.slug}`}
-              level={node.fields.slug.split("/").length - 2}
+              to={`${node.fields.slug}`}
+              level={node.fields.slug.split("/").length - (activeLang()!="en"?3:2)}
               active={isActive}
             >
               {node.fields.title}
