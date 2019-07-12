@@ -4,6 +4,7 @@ import styled from "react-emotion";
 import Link from "./link";
 import './styles.css';
 import config from '../../config';
+import Translator from "./Translator"
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -112,7 +113,7 @@ const SidebarLayout = ({ location }) => (
         return (
           <Sidebar>
             <ul className={'rightSideBarUL'}>
-              <div className={'rightSideTitle'}>CONTENTS</div>
+              <div className={'rightSideTitle'}><Translator text="contents"/></div>
               {finalNavItems}
             </ul>
           </Sidebar>
