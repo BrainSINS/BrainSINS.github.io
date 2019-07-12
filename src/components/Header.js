@@ -5,7 +5,7 @@ import Link from "./link";
 import "./styles.css";
 import Translator from "./Translator"
 import Sidebar from "./sidebar";
-import Switcher from "./Switcher.js";
+import Switcher,{activeLang} from "./Switcher.js";
 
 
 const Header = ({ location }) => (
@@ -41,6 +41,7 @@ const Header = ({ location }) => (
           }
         }
       } = data;
+      const homePath="/"+((activeLang()!="en") ? activeLang() : "");
       return (
         <div className={"navBarWrapper"}>
           <nav className={"navbar navbar-default navBarDefault"}>
@@ -58,7 +59,7 @@ const Header = ({ location }) => (
                 <span className={"icon-bar"} />
                 <span className={"icon-bar"} />
               </button>
-              <Link to="/" className={"navbar-brand navBarBrand"}>
+              <Link to={homePath} className={"navbar-brand navBarBrand"}>
                 {logo !== "" ? (
                   <img className={"img-responsive"} src={logo} alt={"logo"} />
                 ) : (
