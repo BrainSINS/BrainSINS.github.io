@@ -6,7 +6,7 @@ const languages = Object.keys(i18n.services.resourceStore.data);
 export default () => (
   <React.Fragment>
     {languages.map(lang => {
-        let regex = new RegExp('\/es[\/]?', "");
+        let regex = new RegExp('\/[es]+[\/]?', "");
         let path=location.pathname.replace(regex,"/");
         if(lang!="en" && path!="/es"){
             path="/"+lang+((path=="/") ? "" : path);
