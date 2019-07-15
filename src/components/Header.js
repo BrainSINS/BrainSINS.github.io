@@ -6,8 +6,6 @@ import "./styles.css";
 import Translator from "./Translator"
 import Sidebar from "./sidebar";
 import Switcher,{activeLang} from "./Switcher.js";
-
-
 const Header = ({ location }) => (
   <StaticQuery
     query={graphql`
@@ -41,7 +39,7 @@ const Header = ({ location }) => (
           }
         }
       } = data;
-      const homePath="/"+((activeLang()!="en") ? activeLang() : "");
+      const homePath="/"+activeLang();
       return (
         <div className={"navBarWrapper"}>
           <nav className={"navbar navbar-default navBarDefault"}>

@@ -1,6 +1,7 @@
 const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
 const path = require("path");
 const startCase = require("lodash.startcase");
+const i18n=require("i18next");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -69,10 +70,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
     let value = parent.relativePath.replace(parent.ext, "");
-    if(value === "es/index"){
-      value="es";
-    }else if (value === "index" ) {
-      value = "";
+    
+    if(value.indexOf("index")>-1){
+      let regex = new RegExp('[\/]?index', "");
+      value=value.replace(regex,"");
     }
 
     createNodeField({
@@ -91,11 +92,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: "title",
       node,
       value: node.frontmatter.title || startCase(parent.name)
-    });
-    createNodeField({
-      name: "lang",
-      node,
-      value: node.frontmatter.lang || "en"
     });
   }
 };

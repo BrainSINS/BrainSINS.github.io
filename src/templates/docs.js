@@ -7,8 +7,12 @@ import { Layout, Link } from "$components";
 import NextPrevious from '../components/NextPrevious';
 import '../components/styles.css';
 import config from '../../config';
+import { getLangs, activeLang } from "../components/Switcher.js";
+import { navigate } from 'gatsby';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
+const languages = getLangs();
+
 
 injectGlobal`
   * {
@@ -70,7 +74,12 @@ const Edit = styled('div')`
 `;
 
 export default class MDXRuntimeTest extends Component {
+  
   render() {
+    //navigate to another index depending of the lang
+    if(document.location.pathname=="/" && languages.indexOf(activeLang())>-1){
+      navigate("/"+activeLang());
+    }   
     const { data } = this.props;
     const {
       allMdx,
@@ -82,35 +91,40 @@ export default class MDXRuntimeTest extends Component {
     const gitHub = require('../components/images/github.svg');
 
     const navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter(slug => slug !== "/")
-      .sort()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find(url => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
-
-          const prefix = cur.split("/")[1];
-
-          if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
-          }
-        },
-        { items: [] }
-      );
+        .map(({ node }) => {
+          return { slug: node.fields.slug};
+        })
+        .filter(item => {
+          return (
+            item.slug !== "/" && languages.indexOf(item.slug.split("/")[1] < 0)
+          );
+        })
+        .sort()
+        .reduce(
+          (acc, cur) => {
+            if (forcedNavOrder.find(url => url === cur)) {
+              return { ...acc, [cur]: [cur] };
+            }
+            let prefix =cur.slug.replace("/" + activeLang() + "/", "/");
+            if (prefix && forcedNavOrder.find(url => url === `${prefix}`)) {
+              return { ...acc, [`${cur.slug}`]: [...acc[`${cur.slug}`], cur] };
+            } else {
+              return { ...acc, items: [...acc.items, cur] };
+            }
+          },
+          { items: [] }
+        );
 
     const nav = forcedNavOrder
-      .reduce((acc, cur) => {
-        return acc.concat(navItems[cur]);
-      }, [])
-      .concat(navItems.items)
+      // .reduce((acc, cur) => {
+      //   return acc.concat(navItems[cur]);
+      // }, [])
+      // .concat(navItems.items)
       .map(slug => {
-        const { node } = allMdx.edges.find(
-          ({ node }) => node.fields.slug === slug
-        );
+        let slugWithLang ="/"+activeLang() + slug;
+          const { node } = allMdx.edges.find(({ node }) => {
+            return node.fields.slug === slugWithLang;
+          });
 
         return { title: node.fields.title, url: node.fields.slug };
       });

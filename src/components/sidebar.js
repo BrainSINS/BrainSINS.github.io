@@ -141,7 +141,7 @@ const SidebarLayout = ({ location }) => (
     render={({ allMdx }) => {
       const navItems = allMdx.edges
         .map(({ node }) => {
-          return { slug: node.fields.slug, lang: node.fields.lang };
+          return { slug: node.fields.slug};
         })
         .filter(item => {
           return (
@@ -154,10 +154,7 @@ const SidebarLayout = ({ location }) => (
             if (forcedNavOrder.find(url => url === cur)) {
               return { ...acc, [cur]: [cur] };
             }
-            let prefix =
-              activeLang() != "en"
-                ? cur.slug.replace("/" + activeLang() + "/", "/")
-                : cur.slug;
+            let prefix =cur.slug.replace("/" + activeLang() + "/", "/");
             if (prefix && forcedNavOrder.find(url => url === `${prefix}`)) {
               return { ...acc, [`${cur.slug}`]: [...acc[`${cur.slug}`], cur] };
             } else {
@@ -173,10 +170,7 @@ const SidebarLayout = ({ location }) => (
         //.concat(navItems.items)
         .map(slug => {
           
-          let slugWithLang =
-            (activeLang() != "en"
-              ? "/"+activeLang() + slug
-              : slug);
+          let slugWithLang ="/"+activeLang() + slug;
           const { node } = allMdx.edges.find(({ node }) => {
             return node.fields.slug === slugWithLang;
           });
@@ -191,7 +185,7 @@ const SidebarLayout = ({ location }) => (
             <ListItem
               key={node.fields.slug}
               to={`${node.fields.slug}`}
-              level={node.fields.slug.split("/").length - (activeLang()!="en"?3:2)}
+              level={node.fields.slug.split("/").length - 3}
               active={isActive}
             >
               {node.fields.title}
