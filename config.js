@@ -15,11 +15,10 @@ const config = {
 	},
 	"sidebar": {
 		"forcedNavOrder": [
-			"/introduction",
-			"/introduction/miau",
-			"/introduction/guau",
-			"/introduction/codeblock",
-    		"/codeblock"
+			"/integration",
+			"/integration/javascript",
+			"/integration/feed"
+			
 		],
 		"links": [
 			{ "text": "", "link": ""},
