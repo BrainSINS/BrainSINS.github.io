@@ -93,7 +93,7 @@ const SidebarLayout = ({ location }) => (
                   return (
                     <ListItem
                       key={index}
-                      to={`#${innerItem.title}`}
+                      to={`#${innerItem.title.replace(/\s/g,"")}`}
                       level={1}
                     >
                       {innerItem.title}
