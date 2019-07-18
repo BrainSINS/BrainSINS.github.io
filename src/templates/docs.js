@@ -77,7 +77,7 @@ export default class MDXRuntimeTest extends Component {
   
   render() {
     //navigate to another index depending of the lang
-    if(document.location.pathname=="/" && languages.indexOf(activeLang())>-1){
+    if(typeof document != "undefined" && document.location !== undefined && document.location.pathname=="/" && languages.indexOf(activeLang())>-1){
       navigate("/"+activeLang());
     }   
     const { data } = this.props;

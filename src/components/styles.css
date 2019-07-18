@@ -45,7 +45,7 @@ body {
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-  background-color: #542683;
+  background-color: white;
 }
 
 .headerWrapper {
@@ -75,7 +75,7 @@ body {
 
 /* Header section starts here */
 .navBarDefault {
-  background-color: #372476;
+  background-color: #f39933;
   border-radius: 0;
   border-top: 0;
   margin-bottom: 0;
@@ -192,6 +192,12 @@ pre {
   border-width: 1px 0px 1px 1px;
   border-color: transparent currentcolor transparent transparent;
 }
+.sideBarUL li a:hover{
+  color:black !important;
+}
+.sideBarUL li:hover{
+  color:black !important;
+}
 
 .rightSideTitle {
   font-size: 10px;
@@ -231,7 +237,8 @@ pre {
 }
 
 .subLevel:hover {
-  background-color: #542683;
+  background-color: white;
+  color:black !important;
 }
 
 .subLevel a {
@@ -253,7 +260,7 @@ pre {
 }
 
 .subLevel.active a {
-  color: rgb(116, 76, 188);
+  color: #000000;
 }
 
 .titleWrapper {
@@ -408,13 +415,13 @@ pre {
 }
 
 .nextBtn:hover, .previousBtn:hover {
-  color: rgb(116, 76, 188);
+  color: #000000;
   text-decoration: none;
-  border: 1px solid rgb(116, 76, 188);
+  border: 1px solid #000000;
 }
 
 .nextBtn:hover .rightArrow, .previousBtn:hover .leftArrow {
-  color: rgb(116, 76, 188);
+  color: #000000;
 }
 
 /* tables.css */

@@ -5,7 +5,7 @@ const config = {
 		"gaTrackingId": null
 	},
 	"header": {
-		"logo": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_white.svg",
+		"logo": "https://d2xkqxdy6ewr93.cloudfront.net/logos/49427_brainsins_flatsigns_B_v3-2.png",
 		"githubUrl": "https://github.com/BrainSINS/BrainSINS.github.io",
 		"helpUrl": "https://brainsins.zendesk.com",
 		"tweetText": "",
@@ -17,7 +17,15 @@ const config = {
 		"forcedNavOrder": [
 			"/integration",
 			"/integration/javascript",
-			"/integration/feed"
+			"/integration/feed",
+			"/integration/tracking",
+			"/integration/recommenders",
+			"/integration/fields",
+			"/integration/userprofile",
+			"/plugins",
+			"/plugins/prestashop",
+			"/plugins/magento",
+			"/api"
 			
 		],
 		"links": [
@@ -28,8 +36,8 @@ const config = {
 		"title": "Gatsby Gitbook Boilerplate | Hasura",
 		"description": "Documentation built with mdx. Powering learn.hasura.io ",
 		"ogImage": null,
-		"docsLocation": "https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content",
-		"favicon": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg"
+		"docsLocation": "https://github.com/BrainSINS/BrainSINS.github.io",
+		"favicon": "https://d2xkqxdy6ewr93.cloudfront.net/logos/49427_brainsins_flatsigns_A_v3-2.png"
 	},
 };
 

@@ -23,28 +23,28 @@ const Sidebar = styled("aside")`
   position: sticky;
   top: 0;
   padding-right: 0;
-  background-color: #372476;
+  background-color: #f39933;
   /* Safari 4-5, Chrome 1-9 */
-  background: linear-gradient(#372476, #3b173b);
+  background: linear-gradient(#f39933, #d94909);
   background: -webkit-gradient(
     linear,
     0% 0%,
     0% 100%,
-    from(#372476),
-    to(#3b173b)
+    from(#f39933),
+    to(#d94909)
   );
   /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #372476, #3b173b);
+  background: -webkit-linear-gradient(top, #f39933, #d94909);
   /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #372476, #3b173b);
+  background: -moz-linear-gradient(top, #f39933, #d94909);
   /* IE 10 */
-  background: -ms-linear-gradient(top, #372476, #3b173b);
+  background: -ms-linear-gradient(top, #f39933, #d94909);
   /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #372476, #3b173b);
+  background: -o-linear-gradient(top, #f39933, #d94909);
   @media only screen and (max-width: 767px) {
     padding-left: 0px;
-    background-color: #372476;
-    background: #372476;
+    background-color: #f39933;
+    background: #f39933;
   }
   @media (min-width: 767px) and (max-width: 1023px) {
     padding-left: 0;
@@ -90,14 +90,14 @@ const ListItem = styled(({ className, active, level, ...props }) => {
     position: relative;
 
     &:hover {
-      background-color: #542683;
+      background-color: #FFFFFF;
     }
 
     ${props =>
       props.active &&
       `
-      color: #fff;
-      background-color: #473485;
+      color: #000000 !important;
+      background-color: #FFFFFF;
     `} // external link icon
     svg {
       float: right;
