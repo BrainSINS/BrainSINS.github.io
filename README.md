@@ -15,6 +15,15 @@ $ npm start
 
 Visit `http://localhost:8000/` to view the app. Anytime you make a change in the content the app will hot reload, allowing you to view changes in realtime. 
 
+Also, instead of using `npm`commands, you may use `Gatsby`commands:
+
+```
+$ gatsby develop <- this one let you view the debugger in the terminal window
+$ gatsby build <- this will make a fast build if you need to deploy the site in a place like Surge
+$ gatsby serve <- this will serve the site in `http://localhost:8000/` without developing capabitlities
+```
+
+
 ## 🔧 Develop
 
 Write markdown files in `content/lang` folder.
@@ -28,6 +37,18 @@ Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That
 From the **develop** branch you may execute the command `npm run deploy`. You will need to enter your Github credentials in order to dpeloy the changes. This command will deploy the static build into **master** branch. SO YOU DO NOT NEED TO MODIFY MASTER BRANCH, thanks.
 
 Take into account that you need to commit and push the changes in develop branch to allow other members request pull them.
+
+### Example
+Imagine you modify the content of the file `es/index.mdx`. Just execute the following commands to view changes in the cloud:
+```
+#first we update our repo
+$ git commit -am "My commit message"
+$ git push origin develop
+
+#now build and deploy
+$ npm run deploy
+```
+
 
 ## Configure
 
