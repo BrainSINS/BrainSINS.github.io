@@ -33,7 +33,7 @@ const config = {
 		]
 	},
 	"siteMetadata": {
-		"title": "Gatsby Gitbook Boilerplate | Hasura",
+		"title": "BrainSINS documentation",
 		"description": "Documentation built with mdx. Powering learn.hasura.io ",
 		"ogImage": null,
 		"docsLocation": "https://github.com/BrainSINS/BrainSINS.github.io",
