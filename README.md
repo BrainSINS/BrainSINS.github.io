@@ -37,7 +37,7 @@ From the **develop** branch you may execute the command `npm run deploy`. You wi
 
 Take into account that you need to commit and push the changes in develop branch to allow other members request pull them.
 
-### Example
+### Example of deployment
 
 Imagine you modify the content of the file `es/index.mdx`. Just execute the following commands to view changes in the cloud:
 ```
