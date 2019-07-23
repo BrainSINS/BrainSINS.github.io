@@ -36,7 +36,7 @@ const config = {
 		"title": "BrainSINS documentation",
 		"description": "Documentation built with mdx and Gatsby static sites generator.",
 		"ogImage": null,
-		"docsLocation": "https://github.com/BrainSINS/BrainSINS.github.io",
+		"docsLocation": "https://github.com/BrainSINS/BrainSINS.github.io/tree/develop/content",
 		"favicon": "https://d2xkqxdy6ewr93.cloudfront.net/logos/49427_brainsins_flatsigns_A_v3-2.png"
 	},
 };
