@@ -9,6 +9,7 @@ import '../components/styles.css';
 import config from '../../config';
 import { getLangs, activeLang } from "../components/Switcher.js";
 import { navigate } from 'gatsby';
+import Translator from "../components/Translator"
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 const languages = getLangs();
@@ -154,7 +155,7 @@ export default class MDXRuntimeTest extends Component {
           </h1>
           <Edit className={'mobileView'}>
             <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
-              <img src={gitHub} alt={'Github logo'} /> Edit on GitHub
+              <img src={gitHub} alt={'Github logo'} /> <Translator text="github"/>
             </Link>
           </Edit>
         </div>

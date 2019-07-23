@@ -38,6 +38,7 @@ From the **develop** branch you may execute the command `npm run deploy`. You wi
 Take into account that you need to commit and push the changes in develop branch to allow other members request pull them.
 
 ### Example
+
 Imagine you modify the content of the file `es/index.mdx`. Just execute the following commands to view changes in the cloud:
 ```
 #first we update our repo
@@ -49,8 +50,7 @@ $ git push origin develop
 $ npm run deploy
 ```
 
-
-## Configure
+## Configuration files
 
 Open `config.js` for templating variables. Broadly configuration is available for `gatsby`, `header`, `sidebar` and `siteMetadata`.
 
