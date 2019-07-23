@@ -4,7 +4,7 @@ Here you would find instructions to install, improve and deploy the documentatio
 
 ## 🚀 Install
 
-Get started by running the following commands:
+Get started by running the following commands ([NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) required):
 
 ```
 $ git clone git@github.com:BrainSINS/BrainSINS.github.io.git
@@ -22,7 +22,6 @@ $ gatsby develop <- this one let you view the debugger in the terminal window
 $ gatsby build <- this will make a fast build if you need to deploy the site in a place like Surge
 $ gatsby serve <- this will serve the site in `http://localhost:8000/` without developing capabitlities
 ```
-
 
 ## 🔧 Develop
 
