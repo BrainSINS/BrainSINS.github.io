@@ -13,7 +13,7 @@ $ npm install
 $ npm start
 ```
 
-Visit `http://localhost:8000/` to view the app. Anytime you make a change in the content the app will hot reload, allowing you to view changes in realtime. 
+Visit `http://localhost:8000/` to view the app. Anytime you make a change in the content the app will hot reload, allowing you to view changes in realtime. You may also use the GraphQL console at `http://localhost:8000/___graphql`.
 
 Also, instead of using `npm`commands, you may use `Gatsby`commands:
 
@@ -35,6 +35,25 @@ Write markdown files in `content/lang` folder.
 Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That attribute servers the left menu tree, and it is a map of the current files location within the project tree.
 
 **IMPORTAT** So in case you need to add an option, you must add the path within the `sidebar.forcedNavOrder` and also the file in the files tree.
+
+### Playing with GraphQL
+
+Since you may use the [GraphQL console](http://localhost:8000/___graphql), try to play with the following query:
+````
+query {
+        allMdx{
+          edges {
+            node {
+              fields {
+                slug
+                title
+              }
+            }
+          }
+        }
+      }
+````
+The result is the list of nodes within the content folder, which will be the markdown files used for the app content.
 
 ## ☁️ Deploy
 
