@@ -1,4 +1,4 @@
-# BrainSINS Documentation static sitegatsby-gitbook-starter
+# BrainSINS Documentation static site
 
 Here you would find instructions to install, improve and deploy the documentation site.
 
@@ -13,11 +13,23 @@ $ npm install
 $ npm start
 ```
 
-Visit `http://localhost:8000/` to view the app.
+Visit `http://localhost:8000/` to view the app. Anytime you make a change in the content the app will hot reload, allowing you to view changes in realtime. 
 
-## 🔧 Configure
+## 🔧 Develop
 
 Write markdown files in `content/lang` folder.
+
+Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That attribute servers the left menu tree, and it is a map of the current files location within the project tree.
+
+*IMPORTAT* So in case you need to add an option, you must add the path within the `sidebar.forcedNavOrder` and also the file in the files tree.
+
+## ☁️ Deploy
+
+From the *develop* branch you may execute the command `npm run deploy`. You will need to enter your Github credentials in order to dpeloy the changes. This command will deploy the static build into *master* branch. SO YOU DO NOT NEED TO MODIFY MASTER BRANCH, thanks.
+
+Take into account that you need to commit and push the changes in develop branch to allow other members request pull them.
+
+## Configure
 
 Open `config.js` for templating variables. Broadly configuration is available for `gatsby`, `header`, `sidebar` and `siteMetadata`.
 
@@ -44,12 +56,6 @@ Open `config.js` for templating variables. Broadly configuration is available fo
     - `docsLocation` - The Github URL for Edit on Github
 
 - For sub nesting in left sidebar, create a folder with the same name as the top level `.md` filename and the sub navigation is auto-generated. Currently it supports only one level of nesting.
-
-## ☁️ Deploy
-
-From the *develop* branch you may execute the command `npm run deploy`. You will need to enter your Github credentials in order to dpeloy the changes. This command will deploy the static build into *master* branch. SO YOU DO NOT NEED TO MODIFY MASTER BRANCH, thanks.
-
-Take into account that you need to commit and push the changes in develop branch to allow other members request pull them.
 
 ## 🤖 SEO friendly
 
