@@ -25,6 +25,11 @@ $ gatsby serve <- this will serve the site in `http://localhost:8000/` without d
 
 ## 🔧 Develop
 
+**IMPORTANT** check that you are located in the **develop** branch:
+```
+$ git branch
+```
+
 Write markdown files in `content/lang` folder.
 
 Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That attribute servers the left menu tree, and it is a map of the current files location within the project tree.
