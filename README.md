@@ -41,7 +41,8 @@ Take into account that you need to commit and push the changes in develop branch
 Imagine you modify the content of the file `es/index.mdx`. Just execute the following commands to view changes in the cloud:
 ```
 #first we update our repo
-$ git commit -am "My commit message"
+$ git add -A
+$ git commit -m "My commit message"
 $ git push origin develop
 
 #now build and deploy
