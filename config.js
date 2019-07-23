@@ -1,7 +1,7 @@
 const config = {
 	"gatsby": {
 		"pathPrefix": "/",
-		"siteUrl": "https://learn.hasura.io",
+		"siteUrl": "http://developers.brainsins.com/",
 		"gaTrackingId": null
 	},
 	"header": {
@@ -34,7 +34,7 @@ const config = {
 	},
 	"siteMetadata": {
 		"title": "BrainSINS documentation",
-		"description": "Documentation built with mdx. Powering learn.hasura.io ",
+		"description": "Documentation built with mdx and Gatsby static sites generator.",
 		"ogImage": null,
 		"docsLocation": "https://github.com/BrainSINS/BrainSINS.github.io",
 		"favicon": "https://d2xkqxdy6ewr93.cloudfront.net/logos/49427_brainsins_flatsigns_A_v3-2.png"
