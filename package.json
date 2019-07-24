@@ -51,7 +51,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
-    "deploy": "gatsby build && cp CNAME ./public && gh-pages -b master -d public"
+    "deploy": "gatsby build && cp README.md ./public && cp CNAME ./public && gh-pages -b master -d public"
   },
   "devDependencies": {
     "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
