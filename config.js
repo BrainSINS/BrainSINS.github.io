@@ -22,10 +22,14 @@ const config = {
 			"/integration/recommenders",
 			"/integration/fields",
 			"/integration/userprofile",
-			"/plugins",
-			"/plugins/prestashop",
-			"/plugins/magento",
-			"/api"
+			"/integration/plugins",
+			"/integration/plugins/prestashop",
+			"/integration/plugins/magento",
+			"/integration/api",
+			"/analytics",
+			"/analytics/optimization",
+			"/analytics/behavior",
+			"/faq"
 			
 		],
 		"links": [

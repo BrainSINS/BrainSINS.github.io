@@ -71,6 +71,13 @@ const ListItem = styled(({ className, active, level, ...props }) => {
         <Link {...props} />
       </li>
     );
+  } else if (level === 2) {
+    const customClass = active ? "active" : "";
+    return (
+      <li className={"subLevel subLevel2 " + customClass}>
+        <Link {...props} />
+      </li>
+    );
   } else {
     return (
       <li className={className}>

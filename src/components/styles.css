@@ -263,6 +263,11 @@ pre {
   color: #000000;
 }
 
+.subLevel2{
+  margin-left: 30px;
+  border-left: none;
+}
+
 .titleWrapper {
   display: flex;
   align-items: center;
