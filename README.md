@@ -30,9 +30,9 @@ $ gatsby serve <- this will serve the site in `http://localhost:8000/` without d
 $ git branch
 ```
 
-Write markdown files in `content/lang` folder.
+Write markdown files in `content/lang` folder. Each language available within the site must include its own folder with the content. For example, if spanish and english are available, then there should be two folders within the **content** folder: */es* and */en*.
 
-Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That attribute servers the left menu tree, and it is a map of the current files location within the project tree.
+Open `config.js` and take a look at the attribute `sidebar.forcedNavOrder`. That attribute feeds the left menu tree, and it is a map of the current files location within the project tree.
 
 **IMPORTAT** So in case you need to add an option, you must add the path within the `sidebar.forcedNavOrder` and also the file in the files tree.
 
